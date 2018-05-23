@@ -50,7 +50,7 @@
 					<div class="col-sm-6">
 						<div class="row">
 							<div class="col-sm-12 htl_room_cat_data">
-								<p class="room_cat_header">{l s='Total Rooms' mod='hotelreservationsystem'}</p>
+								<p class="room_cat_header">{l s='Total de cuartos' mod='hotelreservationsystem'}</p>
 								<p class="room_cat_data">{$booking_data['stats']['total_rooms']}</p>
 							</div>
 						</div>
@@ -59,7 +59,7 @@
 					<div class="col-sm-6">
 						<div class="row">
 							<div class="col-sm-12 htl_room_cat_data no_border">
-								<p class="room_cat_header">{l s='Partially Available' mod='hotelreservationsystem'}</p>
+								<p class="room_cat_header">{l s='Parcialmente disponible' mod='hotelreservationsystem'}</p>
 								<p class="room_cat_data">{$booking_data['stats']['num_part_avai']}</p>
 							</div>
 						</div>
@@ -70,7 +70,7 @@
 					<div class="col-sm-6">
 						<div class="row">
 							<div class="col-sm-12 htl_room_cat_data">
-								<p class="room_cat_header">{l s='Available Rooms' mod='hotelreservationsystem'}</p>
+								<p class="room_cat_header">{l s='Cuartos disponibles' mod='hotelreservationsystem'}</p>
 								<p class="room_cat_data">{$booking_data['stats']['num_avail']}</p>
 							</div>
 						</div>
@@ -79,7 +79,7 @@
 					<div class="col-sm-6">
 						<div class="row">
 							<div class="col-sm-12 htl_room_cat_data no_border">
-								<p class="room_cat_header">{l s='Booked Rooms' mod='hotelreservationsystem'}</p>
+								<p class="room_cat_header">{l s='Cuartos reservados' mod='hotelreservationsystem'}</p>
 								<p class="room_cat_data">{$booking_data['stats']['num_booked']}</p>
 							</div>
 						</div>
@@ -90,7 +90,7 @@
 					<div class="col-sm-6">
 						<div class="row">
 							<div class="col-sm-12 htl_room_cat_data">
-								<p class="room_cat_header">{l s='Unavailable Rooms' mod='hotelreservationsystem'}</p>
+								<p class="room_cat_header">{l s='Cuartos no disponibles' mod='hotelreservationsystem'}</p>
 								<p class="room_cat_data">{$booking_data['stats']['num_unavail']}</p>
 							</div>
 						</div>
@@ -101,19 +101,19 @@
 				<div class="row">
 					<div class="col-sm-6 indi_cont clearfix">
 						<div class="color_indicate bg-green"></div>
-						<span class="indi_label">{l s='Available Rooms' mod='hotelreservationsystem'}</span>
+						<span class="indi_label">{l s='Cuartos disponibles' mod='hotelreservationsystem'}</span>
 					</div>
 					<div class="col-sm-6 indi_cont clearfix">
 						<div class="color_indicate bg-yellow"></div>
-						<span class="indi_label">{l s='Partially Available' mod='hotelreservationsystem'}</span>
+						<span class="indi_label">{l s='Parcialmente disponibles' mod='hotelreservationsystem'}</span>
 					</div>
 					<div class="col-sm-6 indi_cont clearfix">
 						<div class="color_indicate bg-red"></div>
-						<span class="indi_label">{l s='Unavailable Rooms' mod='hotelreservationsystem'}</span>
+						<span class="indi_label">{l s='Cuartos no disponibles' mod='hotelreservationsystem'}</span>
 					</div>
 					<div class="col-sm-6 indi_cont clearfix">
 						<div class="color_indicate bg-gray"></div>
-						<span class="indi_label">{l s='Hold For Maintenance' mod='hotelreservationsystem'}</span>
+						<span class="indi_label">{l s='En mantenimiento' mod='hotelreservationsystem'}</span>
 					</div>
 				</div>
 			</div>
@@ -126,21 +126,21 @@
 			</a>
 			<button type="submit" name="submitAddproductAndStay" class="btn btn-default pull-right" disabled="disabled" id="stayBookingTab">
 				<i class="process-icon-loading"></i>
-					{l s='Display Bookings'}
+					{l s='Mostrar reservaciones'}
 			</button>
 		</div>
 	</div>
 
 	<div class="panel">
-		<h3 class="tab"> <i class="icon-list"></i> {l s='LIST OF HOTEL ROOMS' mod='hotelreservationsystem'}</h3>
+		<h3 class="tab"> <i class="icon-list"></i> {l s='LISTADO DE CUARTOS' mod='hotelreservationsystem'}</h3>
 		<div class="form-group">
 			<div class="table-responsive">
 				<table class="table">
 					<thead>
 						<tr>
-							<th>{l s='Room No.' mod='hotelreservationsystem'}</th>
-							<th>{l s='Status' mod='hotelreservationsystem'}</th>
-							<th>{l s='Message' mod='hotelreservationsystem'}</th>
+							<th>{l s='Cuarto No.' mod='hotelreservationsystem'}</th>
+							<th>{l s='Estado' mod='hotelreservationsystem'}</th>
+							<th>{l s='Mensaje' mod='hotelreservationsystem'}</th>
 						</tr>
 					</thead>
 					<tbody>

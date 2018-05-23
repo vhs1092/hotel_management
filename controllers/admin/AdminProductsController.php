@@ -92,7 +92,7 @@ class AdminProductsControllerCore extends AdminController
             'Pack' => $this->l('Pack'),
             //'VirtualProduct' => $this->l('Virtual Product'),
             'Prices' => $this->l('Prices'),
-            'Seo' => $this->l('SEO'),
+            //'Seo' => $this->l('SEO'),
             'Images' => $this->l('Images'),
             'Associations' => $this->l('Associations'),
             //'Shipping' => $this->l('Shipping'),
@@ -103,8 +103,8 @@ class AdminProductsControllerCore extends AdminController
             //'Quantities' => $this->l('Quantities'),
             //'Suppliers' => $this->l('Suppliers'),
             'Warehouses' => $this->l('Warehouses'),
-            'Configuration' => $this->l('Configuration'),
-            'Booking' => $this->l('Booking Information'),
+            'Configuration' => $this->l('Configuración'),
+            'Booking' => $this->l('Información de reserva'),
         );
 
         $this->available_tabs = array('Warehouses' => 14);
@@ -114,7 +114,7 @@ class AdminProductsControllerCore extends AdminController
                 'Pack' => 7,
                 //'VirtualProduct' => 8,
                 'Prices' => 1,
-                'Seo' => 2,
+                //'Seo' => 2,
                 'Associations' => 3,
                 'Images' => 9,
                 //'Shipping' => 4,
@@ -2104,9 +2104,9 @@ class AdminProductsControllerCore extends AdminController
                         if ($this->isTabSubmitted('Shipping')) {
                             $this->addCarriers();
                         }
-                        if ($this->isTabSubmitted('Associations')) {
+                        /*if ($this->isTabSubmitted('Associations')) {
                             $this->updateAccessories($object);
-                        }
+                        }*/
                         if ($this->isTabSubmitted('Suppliers')) {
                             $this->processSuppliers();
                         }
@@ -3665,11 +3665,10 @@ class AdminProductsControllerCore extends AdminController
             ->setUseCheckBox(true)
             ->setUseSearch(true)
             ->setSelectedCategories($categories);
-
         $data->assign(array('default_category' => $default_category,
                     'selected_cat_ids' => implode(',', array_keys($selected_cat)),
                     'selected_cat' => $selected_cat,
-                    'id_category_default' => $product->getDefaultCategory(),
+                    'id_category_default' => 2,
                     'category_tree' => $tree->render(),
                     'product' => $product,
                     'link' => $this->context->link,
@@ -4168,7 +4167,7 @@ class AdminProductsControllerCore extends AdminController
         // Reindex array starting from 0
         $specific_price_priorities = array_values($specific_price_priorities);
 
-        $content .= '<div class="panel">
+        $content .= '<div class="panel" style="display:none;">
         <h3>'.$this->l('Priority management').'</h3>
         <div class="alert alert-info">
                 '.$this->l('Sometimes one customer can fit into multiple price rules. Priorities allow you to define which rule applies to the customer.').'

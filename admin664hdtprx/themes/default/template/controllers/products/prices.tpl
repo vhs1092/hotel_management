@@ -229,7 +229,7 @@ $(document).ready(function () {
 		</div>
 	</div>
 	{/if}
-	<div class="form-group">
+	<div class="form-group" style="display: none;">
 		<div class="col-lg-1"><span class="pull-right">{include file="controllers/products/multishop/checkbox.tpl" field="on_sale" type="default"}</span></div>
 		<label class="control-label col-lg-2" for="on_sale">&nbsp;</label>
 		<div class="col-lg-9">
@@ -266,15 +266,15 @@ $(document).ready(function () {
 
 	<!-- by webkul -->
 	{if $WK_ALLOW_ADVANCED_PAYMENT}
-		<div class="form-group">
+		<div class="form-group" style="display: none;">
 			<div class="col-lg-1"><span class="pull-right">{include file="controllers/products/multishop/checkbox.tpl" field="price" type="price"}</span></div>
-			<label class="control-label col-sm-2">
+			<label class="control-label col-sm-2" style="display: none;">
 				<input type="hidden" name="id_adv_pmt" {if isset($adv_pay_dtl)}value="{$adv_pay_dtl['id']}"{/if}>
 				<span class="label-tooltip" data-toggle="tooltip" title="{l s='If Disabled, Advanced payment will not appliy on this room type.'}">
 					{l s='Allow Advanced Payment'}
 				</span>
 			</label>
-			<div class="col-lg-9">
+			<div class="col-lg-9" style="display: none;">
 				<span class="switch prestashop-switch fixed-width-lg">
 					<input type="radio" value="1" id="adv_payment_active_on" name="adv_payment_active" class="adv_payment_active" {if ((isset($adv_pay_dtl) && $adv_pay_dtl['active']) || !isset($adv_pay_dtl))}checked="checked"{/if}>
 					<label for="adv_payment_active_on">{l s='Yes'}</label>
@@ -285,7 +285,7 @@ $(document).ready(function () {
 			</div>
 		</div>
 
-		<div class="form-group adv_payment_field">
+		<!--div class="form-group adv_payment_field" style="display: none;">
 			<div class="col-lg-1"><span class="pull-right">{include file="controllers/products/multishop/checkbox.tpl" field="price" type="price"}</span></div>
 			<label class="control-label col-sm-2">
 				<span class="label-tooltip" data-toggle="tooltip" title="{l s='If disabled, Advanced Payment for the room type will be calculated By Global Advanced payment settings.'}">
@@ -301,12 +301,12 @@ $(document).ready(function () {
 					<a class="slide-button btn"></a>
 				</span>
 			</div>
-		</div>
+		</div-->
 
 		<div class="form-group adv_payment_field">
-			<div class="col-lg-1"><span class="pull-right">{include file="controllers/products/multishop/checkbox.tpl" field="price" type="price"}</span></div>
-			<label class="control-label col-sm-2">{l s='Payment type'}</label>
-			<div class="col-lg-9">
+			<div style="display: none;" class="col-lg-1"><span class="pull-right">{include file="controllers/products/multishop/checkbox.tpl" field="price" type="price"}</span></div>
+			<label  style="display: none;"class="control-label col-sm-2">{l s='Payment type'}</label>
+			<div   style="display: none;" class="col-lg-9">
 				<div class="radio">
 					<label for="percent_type">
 						<input type="radio" name="payment_type" class="payment_type" value="1" {if ((isset($adv_pay_dtl) && ($adv_pay_dtl['payment_type'] == 1)) || !isset($adv_pay_dtl) || !$adv_pay_dtl['payment_type'])}checked="checked"{/if}>
@@ -323,12 +323,12 @@ $(document).ready(function () {
 		</div>
 
 		<div class="form-group adv_payment_field">
-			<div class="col-lg-1"><span class="pull-right">{include file="controllers/products/multishop/checkbox.tpl" field="price" type="price"}</span></div>
+			<div  style="display: none;" class="col-lg-1"><span class="pull-right">{include file="controllers/products/multishop/checkbox.tpl" field="price" type="price"}</span></div>
 			<div class="col-lg-11">
 
-				<div class="row" id="type_percent">
-					<label class="control-label col-sm-2">{l s='Value'}</label>
-					<div class="col-sm-4 col-lg-3">
+				<div  style="display: none;"  class="row" id="type_percent">
+					<label class="control-label col-sm-2" style="display: none;" >{l s='Value'}</label>
+					<div class="col-sm-4 col-lg-3" style="display: none;" >
 						<div class="input-group">
 							<span class="input-group-addon">%</span>
 							<input type="text" value="{if isset($adv_pay_dtl) && ($adv_pay_dtl['payment_type'] == 1)}{$adv_pay_dtl['value']}{/if}" name="adv_pay_percent" />
@@ -336,7 +336,7 @@ $(document).ready(function () {
 					</div>
 				</div>
 				
-				<div class="row" id="type_amount">
+				<div  style="display: none;" class="row" id="type_amount">
 					<label class="control-label col-sm-2">{l s='Amount'}</label>
 					<div class="col-sm-4 col-lg-3">
 						<div class="input-group">
@@ -353,7 +353,7 @@ $(document).ready(function () {
 			<div class="col-lg-1"><span class="pull-right">{include file="controllers/products/multishop/checkbox.tpl" field="price" type="price"}</span></div>
 			<label class="control-label col-sm-2">
 				<span class="label-tooltip" data-toggle="tooltip" title="{l s='If Enable, customer will pay : (Advanced payment price + tax) and if Disabled, customer will onluy pay advanced payment price'}">
-					{l s='Tax Include'}
+					{l s='Incluir impuestos'}
 				</span>
 			</label>
 			<div class="col-lg-9">
@@ -375,7 +375,7 @@ $(document).ready(function () {
 	</div>
 </div>
 
-<div class="panel">
+<!--div class="panel">
 	<h3>{l s='Feature Price Plans'}</h3>
 	<div class="alert alert-info">
 		{l s='You can set feature price plans by visiting '}
@@ -451,11 +451,11 @@ $(document).ready(function () {
 			</tbody>
 		</table>
 	</div>
-</div>
+</div-->
 
 {if isset($specificPriceModificationForm)}
-<div class="panel">
-	<h3>{l s='Specific prices'}</h3>
+<div class="panel" style="display: none;">
+	<!--h3>{l s='Specific prices'}</h3>
 	<div class="alert alert-info">
 		{l s='You can set specific prices for clients belonging to different groups, different countries, etc.'}
 	</div>
@@ -468,7 +468,7 @@ $(document).ready(function () {
 				<i class="icon-remove text-danger"></i> {l s='Cancel new specific price'}
 			</a>
 		</div>
-	</div>
+	</div-->
 	<script type="text/javascript">
 		var product_prices = new Array();
 		{foreach from=$combinations item='combination'}
@@ -476,7 +476,7 @@ $(document).ready(function () {
 			/*product_prices['{$combination.id_product_attribute}'] = '{$combination.price|@addcslashes:'\''}';*/
 		{/foreach}
 	</script>
-	<div id="add_specific_price" class="well clearfix" style="display: none;">
+	<!--div id="add_specific_price" class="well clearfix" style="display: none;">
 		<div class="col-lg-12">
 			<div class="form-group">
 				<label class="control-label col-lg-2" for="{if !$multi_shop}spm_currency_0{else}sp_id_shop{/if}">{l s='For'}</label>
@@ -623,7 +623,7 @@ $(document).ready(function () {
 				</div>
 			</div>
 		</div>
-	</div>
+	</div -->
 	<script type="text/javascript">
 		var currencyName = "{$currency->name|escape:'html':'UTF-8'|@addcslashes:'\''}";
 		$(document).ready(function()
@@ -706,7 +706,7 @@ $(document).ready(function () {
 		});
 	</script>
 	<div class="table-responsive">
-	<table id="specific_prices_list" class="table table-bordered">
+	<table id="specific_prices_list" class="table table-bordered" style="display: none;">
 		<thead>
 			<tr>
 				<th>{l s='Rule'}</th>

@@ -196,11 +196,10 @@ class AdminFeaturesControllerCore extends AdminController
 				),
 				array(
 					'type' => 'file',		
-					'label' => $this->l('Feature Logo'),		
+					'label' => $this->l('Imagen'),		
 					'name' => 'logo',
 					'image' => $img_exist ? $image : false,
 					'display_image' => true,		
-					'hint' => $this->l('Upload a feature logo.'),
 					'required' => true
 				)
 			)

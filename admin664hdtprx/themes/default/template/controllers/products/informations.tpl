@@ -132,8 +132,8 @@
 	<div class="form-group">
 		<div class="col-lg-1"><span class="pull-right">{include file="controllers/products/multishop/checkbox.tpl" field="name" type="default" multilang="true"}</span></div>
 		<label class="control-label col-lg-2 required" for="name_{$id_lang}">
-			<span class="label-tooltip" data-toggle="tooltip" title="{l s='Write the name of the Room Type for ex. Delux, Executive etc.'} {l s='Invalid characters:'} &lt;&gt;;=#{}">
-				{l s='Room Type'}
+			<span class="label-tooltip" data-toggle="tooltip" title="{l s='Nombre de la habitación, ej. Executive etc.'} {l s='Invalid characters:'} &lt;&gt;;=#{}">
+				{l s='Nombre de habitación'}
 			</span>
 		</label>
 		<div class="col-lg-5">
@@ -357,7 +357,7 @@
 		</div>
 	</div>
 	{if $images}
-	<div class="form-group">
+	<!--div class="form-group">
 		<div class="col-lg-9 col-lg-offset-3">
 			<div class="alert alert-info">
 				{capture}<a class="addImageDescription" href="javascript:void(0);">{l s='Click here'}</a>{/capture}
@@ -419,10 +419,10 @@
 			</div>
 			<p class="help-block"></p>
 		</div>
-	</div>
+	</div-->
 	{/if}
 
-	<div class="form-group">
+	<div class="form-group" style="display: none;">
 		<label class="control-label col-lg-3" for="tags_{$id_lang}">
 			<span class="label-tooltip" data-toggle="tooltip"
 				title="{l s='Will be displayed in the tags block when enabled. Tags help customers easily find your products.'}">

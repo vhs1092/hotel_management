@@ -1,7 +1,7 @@
 {if isset($product->id)}
 	<div id="product-configuration" class="panel product-tab">
 		<input type="hidden" name="submitted_tabs[]" value="Configuration" />
-		<h3 class="tab"> <i class="icon-AdminAdmin"></i> {l s='Configuration' mod='hotelreservationsystem'}</h3>
+		<h3 class="tab"> <i class="icon-AdminAdmin"></i> {l s='Configuración' mod='hotelreservationsystem'}</h3>
 		
 		{if isset($htl_room_type)}
 			<input type="hidden" value="{$htl_room_type['id']}" name="wk_id_room_type">
@@ -32,7 +32,7 @@
 		
 		<div class="form-group">
 			<label class="control-label col-sm-2" for="num_adults">
-				{l s='Adults' mod='hotelreservationsystem'}
+				{l s='Adultos' mod='hotelreservationsystem'}
 			</label>
 			<div class="col-sm-4">
 				<input id="num_adults" type="text" name="num_adults" class="form-control" {if isset($htl_room_type)}value="{$htl_room_type['adult']}"{/if}>
@@ -42,7 +42,7 @@
 		
 		<div class="form-group">
 			<label class="control-label col-sm-2" for="num_child">
-				{l s='Childrens' mod='hotelreservationsystem'}
+				{l s='Niños' mod='hotelreservationsystem'}
 			</label>
 			<div class="col-sm-4">
 				<input id="num_child" type="text" name="num_child" class="form-control" {if isset($htl_room_type)}value="{$htl_room_type['children']}"{/if}>
@@ -54,16 +54,16 @@
 				<thead>
 					<tr class="nodrag nodrop">
 						<th class="col-sm-1 center">
-							<span>{l s='Room No.' mod='hotelreservationsystem'}</span>
+							<span>{l s='Cuarto No.' mod='hotelreservationsystem'}</span>
 						</th>
 						<th class="col-sm-2 center">
-							<span>{l s='Floor' mod='hotelreservationsystem'}</span>
+							<span>{l s='Piso' mod='hotelreservationsystem'}</span>
 						</th>
 						<th class="col-sm-2">
-							<span>{l s='Status' mod='hotelreservationsystem'}</span>
+							<span>{l s='Estado' mod='hotelreservationsystem'}</span>
 						</th>
 						<th class="col-sm-7 center">
-							<span>{l s='Extra Information' mod='hotelreservationsystem'}</span>
+							<span>{l s='Información extra' mod='hotelreservationsystem'}</span>
 						</th>
 					</tr>
 					{if isset($htl_room_info) && $htl_room_info}
@@ -126,7 +126,7 @@
 				<div class="col-sm-12">
 					<button id="add-more-rooms-button" class="btn btn-default" type="button" data-size="s" data-style="expand-right">
 						<i class="icon-folder-open"></i>
-						{l s='Add More Rooms' mod='hotelreservationsystem'}
+						{l s='Agregar mas cuartos' mod='hotelreservationsystem'}
 					</button>
 				</div>
 			</div>

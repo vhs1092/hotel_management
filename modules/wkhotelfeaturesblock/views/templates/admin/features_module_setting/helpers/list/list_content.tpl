@@ -88,7 +88,7 @@
 							{if $k==0}
 								{assign var="imagepath" value="$ps_ftr_img_dir/$t.jpg"}
 								{if file_exists($imagepath)}
-									<img width="60px" alt="{l s='Feature Logo' mod='wkhotelfeaturesblock'}" src="{$features_img_dir}/{$t}.jpg">
+									<img width="60px" alt="{l s='Imagen' mod='wkhotelfeaturesblock'}" src="{$features_img_dir}/{$t}.jpg">
 								{else}
 									<img width="60px" alt="{l s='Default Logo' mod='wkhotelfeaturesblock'}" src="{$features_img_dir}/default.jpg">	
 								{/if}

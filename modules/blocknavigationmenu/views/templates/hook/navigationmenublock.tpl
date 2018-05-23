@@ -18,9 +18,7 @@
 						<a class="navigation-link" href="{if isset($force_ssl) && $force_ssl}{$base_dir_ssl}{else}{$base_dir}{/if}">{l s='Home' mod='blocknevigationmenu'}</a>
 					</li>
 					{hook h="displayDefaultNavigationHook"}
-					<li>
-						<a class="navigation-link" href="{$link->getPageLink('contact', true)|escape:'html'}">{l s='Contact' mod='blocknevigationmenu'}</a>
-					</li>
+					
 				</ul>
 				{hook h="displayExternalNavigationHook"}
 			</div>

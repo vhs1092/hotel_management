@@ -283,7 +283,7 @@ class ProductCore extends ObjectModel
             'is_virtual' =>                array('type' => self::TYPE_BOOL, 'validate' => 'isBool'),
 
             /* Shop fields */
-            'id_category_default' =>        array('type' => self::TYPE_INT, 'shop' => true, 'validate' => 'isUnsignedId'),
+            'id_category_default' =>        array('type' => self::TYPE_INT, 'shop' => true, 'validate' => 'isUnsignedId', 'default' => 2),
             'id_tax_rules_group' =>        array('type' => self::TYPE_INT, 'shop' => true, 'validate' => 'isUnsignedId'),
             'on_sale' =>                    array('type' => self::TYPE_BOOL, 'shop' => true, 'validate' => 'isBool'),
             'online_only' =>                array('type' => self::TYPE_BOOL, 'shop' => true, 'validate' => 'isBool'),
@@ -320,7 +320,6 @@ class ProductCore extends ObjectModel
                 'type' => self::TYPE_STRING,
                 'lang' => true,
                 'validate' => 'isLinkRewrite',
-                'required' => true,
                 'size' => 128,
                 'ws_modifier' => array(
                     'http_method' => WebserviceRequest::HTTP_POST,

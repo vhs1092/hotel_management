@@ -28,17 +28,14 @@
 	<input type="hidden" name="submitted_tabs[]" value="Features" />
 	<h3>{l s='Assign features to this product'}</h3>
 
-	<div class="alert alert-info">
-		{l s='You can specify a value for each relevant feature regarding this product. Empty fields will not be displayed.'}<br/>
-		{l s='You can either create a specific value, or select among the existing pre-defined values you\'ve previously added.'}
-	</div>
+
 
 	<table class="table">
 		<thead>
 			<tr>
 				<th></th>
 				<th><span class="title_box">{l s='Feature'}</span></th>
-				<th><span class="title_box">{l s='Feature Image'}</span></th>
+				<th><span class="title_box">{l s='Imagen'}</span></th>
 				<!-- <th><span class="title_box"><u>{l s='or'}</u> {l s='Customized value'}</span></th> --><!-- by webkul -->
 			</tr>
 		</thead>

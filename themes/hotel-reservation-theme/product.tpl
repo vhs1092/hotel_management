@@ -323,8 +323,9 @@
 							<div class="info_margin_div room_description">
 								{$product->description}<br>
 								<strong>{l s="Room features -"}</strong>
+								<br>
 								{foreach from=$features key=ftr_k item=ftr_v}
-									&nbsp;<img width="15px" src="{$ftr_img_src}{$ftr_v.value}">
+									<b>{$ftr_v.name}</b>&nbsp;<img width="15px" src="{$ftr_img_src}{$ftr_v.value}"><br>
 								{/foreach}
 							</div>
 							<div class="info_margin_div">
