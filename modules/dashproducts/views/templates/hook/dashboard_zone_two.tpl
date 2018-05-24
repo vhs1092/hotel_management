@@ -62,13 +62,7 @@
 						<span class="hidden-inline-xs">{l s='Most Viewed' mod='dashproducts'}</span>
 					</a>
 				</li>
-				<li>
-					<a href="#dash_top_search" data-toggle="tab">
-						<i class="icon-search"></i>
-						<span class="hidden-inline-xs">{l s='Top Searches' mod='dashproducts'}</span>
-					</a>
-				</li>
-			</ul>
+				</ul>
 		</nav>
 
 		<div class="tab-content panel">

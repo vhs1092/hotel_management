@@ -237,7 +237,7 @@ class ProductComments extends Module
 			$this->_postProcess();
 			$this->_html .= $this->renderConfigForm();
 			$this->_html .= $this->renderModerateLists();
-			$this->_html .= $this->renderCriterionList();
+			//$this->_html .= $this->renderCriterionList();
 			$this->_html .= $this->renderCommentsList();
 		}
 

@@ -242,12 +242,12 @@ class AdminEmployeesControllerCore extends AdminController
                     'name' => 'lastname',
                     'required' => true
                 ),
-                array(
+                /*array(
                     'type' => 'html',
                     'name' => 'employee_avatar',
                     'html_content' => '<div id="employee-thumbnail"><a href="http://www.prestashop.com/forums/index.php?app=core&amp;module=usercp" target="_blank" style="background-image:url('.$obj->getImage().')"></a></div>
 					<div class="alert alert-info">'.sprintf($this->l('Your avatar in PrestaShop 1.6.x is your profile picture on %1$s. To change your avatar, log in to PrestaShop.com with your email %2$s and follow the on-screen instructions.'), '<a href="http://www.prestashop.com/forums/index.php?app=core&amp;module=usercp" class="alert-link" target="_blank">PrestaShop.com</a>', $obj->email).'</div>',
-                ),
+                ),*/
                 array(
                     'type' => 'text',
                     'class'=> 'fixed-width-xxl',
@@ -267,13 +267,13 @@ class AdminEmployeesControllerCore extends AdminController
                 'name' => 'passwd'
                 );
 
-            if (Tab::checkTabRights(Tab::getIdFromClassName('AdminModulesController'))) {
+            /*if (Tab::checkTabRights(Tab::getIdFromClassName('AdminModulesController'))) {
                 $this->fields_form['input'][] = array(
                     'type' => 'prestashop_addons',
                     'label' => 'PrestaShop Addons',
                     'name' => 'prestashop_addons',
                 );
-            }
+            }*/
         } else {
             $this->fields_form['input'][] = array(
                 'type' => 'password',
@@ -284,7 +284,7 @@ class AdminEmployeesControllerCore extends AdminController
         }
 
         $this->fields_form['input'] = array_merge($this->fields_form['input'], array(
-            array(
+            /*array(
                 'type' => 'switch',
                 'label' => $this->l('Subscribe to PrestaShop newsletter'),
                 'name' => 'optin',
@@ -303,14 +303,14 @@ class AdminEmployeesControllerCore extends AdminController
                     )
                 ),
                 'hint' => $this->l('PrestaShop can provide you with guidance on a regular basis by sending you tips on how to optimize the management of your store which will help you grow your business. If you do not wish to receive these tips, you can disable this option.')
-            ),
-            array(
+            ),*/
+            /*array(
                 'type' => 'default_tab',
                 'label' => $this->l('Default page'),
                 'name' => 'default_tab',
                 'hint' => $this->l('This page will be displayed just after login.'),
                 'options' => $this->tabs_list
-            ),
+            ),*/
             array(
                 'type' => 'select',
                 'label' => $this->l('Language'),

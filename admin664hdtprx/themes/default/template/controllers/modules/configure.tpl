@@ -33,13 +33,7 @@
 {/block}
 {block name=pageBreadcrumb}
 <ul class="breadcrumb page-breadcrumb">
-	{if $breadcrumbs2.container.name != ''}
-		<li class="breadcrumb-current">
-			{if $breadcrumbs2.container.href != ''}<a href="{$breadcrumbs2.container.href|escape}">{/if}
-			{$breadcrumbs2.container.name|escape}
-			{if $breadcrumbs2.container.href != ''}</a>{/if}
-		</li>
-	{/if}
+
 	<li>{$module_name}</li>
 	<li>
 		<i class="icon-wrench"></i>
@@ -57,12 +51,12 @@
 <div class="page-bar toolbarBox">
 	<div class="btn-toolbar">
 		<ul class="nav nav-pills pull-right">
-			<li>
+			<!--li>
 				<a id="desc-module-back" class="toolbar_btn" href="javascript: window.history.back();" title="{l s='Back'}">
 					<i class="process-icon-back"></i>
 					<div>{l s='Back'}</div>
 				</a>
-			</li>
+			</li-->
 			<!-- <li>
 				<a id="desc-module-disable" class="toolbar_btn" href="{$module_disable_link}" title="{l s='Disable'}">
 					<i class="process-icon-off"></i>
@@ -82,7 +76,7 @@
 				</a>
 			</li> -->
 			{if isset($trad_link)}
-			<li>
+			<!--li>
 				<a id="desc-module-translate" data-toggle="modal" data-target="#moduleTradLangSelect" class="toolbar_btn" href="#" title="{l s='Translate'}">
 					<i class="process-icon-flag"></i>
 					<div>{l s='Translate'}</div>
@@ -102,7 +96,7 @@
 					<i class="process-icon-anchor"></i>
 					<div>{l s='Manage hooks'}</div>
 				</a>
-			</li>
+			</li-->
 		</ul>
 	</div>
 </div>

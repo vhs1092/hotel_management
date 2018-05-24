@@ -84,7 +84,7 @@
 		<!--div class="col-md-4 col-lg-3" id="hookDashboardZoneOne">
 			{$hookDashboardZoneOne}
 		</div-->
-		<div class="col-md-8 col-lg-7" id="hookDashboardZoneTwo">
+		<div class="col-md-12 col-lg-12" id="hookDashboardZoneTwo">
 			{$hookDashboardZoneTwo}
 
 		</div>

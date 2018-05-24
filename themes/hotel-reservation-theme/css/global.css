@@ -5757,7 +5757,8 @@ textarea {
   background-size: cover; /* webkul */ }
 
 .columns-container {
-  background: #fff; }
+  background: #fff; 
+}
 
 #columns {
   position: relative;

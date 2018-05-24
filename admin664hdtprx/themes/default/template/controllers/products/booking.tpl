@@ -1,7 +1,7 @@
 {if isset($product->id) && isset($htl_config)}
 	<div id="product-configuration" class="panel product-tab">
 		<input type="hidden" name="submitted_tabs[]" value="Booking"/>
-		<h3 class="tab"> <i class="icon-info"></i> {l s='Booking Information' mod='hotelreservationsystem'}</h3>
+		<h3 class="tab"> <i class="icon-info"></i> {l s='Reservaciones' mod='hotelreservationsystem'}</h3>
 
 		<div class="form-group">
 			<div class="col-sm-1"></div>
@@ -149,7 +149,7 @@
 								{foreach from=$b_val key=data_k item=data_v}
 									<tr>
 										<td>{$data_v['room_num']}</td>
-										<td>{l s='Available' mod='hotelreservationsystem'}</td>
+										<td>{l s='Disponible' mod='hotelreservationsystem'}</td>
 										<td>{$data_v['room_comment']}</td>
 									</tr>
 								{/foreach}
@@ -157,7 +157,7 @@
 								{foreach from=$b_val key=data_k item=data_v}
 									<tr>
 										<td>{$data_v['room_num']}</td>
-										<td>{l s='Unavailable' mod='hotelreservationsystem'}</td>
+										<td>{l s='No disponible' mod='hotelreservationsystem'}</td>
 										<td>{$data_v['room_comment']}</td>
 									</tr>
 								{/foreach}
@@ -167,7 +167,7 @@
 										<td>{$data_v['room_num']}</td>
 										<td>
 											{if $data_v['detail'][0]['booking_status'] == 1}
-												{l s='Alloted' mod='hotelreservationsystem'}
+												{l s='Ocupado' mod='hotelreservationsystem'}
 											{elseif $data_v['detail'][0]['booking_status'] == 2}
 												{l s='Checked-in' mod='hotelreservationsystem'}
 											{elseif $data_v['detail'][0]['booking_status'] == 3}

@@ -27,7 +27,7 @@
 <div class="row">
     <section class="col-xs-12 col-sm-12">
         <div class="row margin-lr-0 footer-section-heading">
-            <p>{l s='GET NOTIFICATIONS' mod='blocknewsletter'}</p>
+            <p>{l s='Obtener Notificaciones' mod='blocknewsletter'}</p>
             <hr/>
         </div>
         <div class="row margin-lr-0">
@@ -35,7 +35,7 @@
                 <div class="form-group{if isset($msg) && $msg } {if $nw_error}form-error{else}form-ok{/if}{/if}" >
                     <input class="inputNew form-control grey newsletter-input" id="newsletter-input" type="text" name="email" size="18" value="{if isset($msg) && $msg}{$msg}{elseif isset($value) && $value}{$value}{else}{l s='Enter your e-mail' mod='blocknewsletter'}{/if}" />
                     <button type="submit" name="submitNewsletter" class="btn button button-medium newsletter-btn">
-                        <span>{l s='Subscribe' mod='blocknewsletter'}</span>
+                        <span>{l s='Subscribirse' mod='blocknewsletter'}</span>
                     </button>
                     <input type="hidden" name="action" value="0" />
                 </div>

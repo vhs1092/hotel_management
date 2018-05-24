@@ -46,7 +46,7 @@ var generated_date = {$smarty.now|intval};
 <!-- MODULE Block cart -->
 <div id="cart_block" class="block exclusive">
 	<h4 class="title_block">
-		<a href="{$link->getPageLink("$order_process", true)|escape:'html'}" title="{l s='View my shopping cart' mod='blockcart'}" rel="nofollow">{l s='Cart' mod='blockcart'}</a>
+		<a href="{$link->getPageLink("$order_process", true)|escape:'html'}" title="{l s='Ver mis reservaciones' mod='blockcart'}" rel="nofollow">{l s='Cart' mod='blockcart'}</a>
 		{if $ajax_allowed}
 		<span id="block_cart_expand" {if isset($colapseExpandStatus) && $colapseExpandStatus eq 'expanded' || !isset($colapseExpandStatus)}class="hidden"{/if}>&nbsp;</span>
 		<span id="block_cart_collapse" {if isset($colapseExpandStatus) && $colapseExpandStatus eq 'collapsed'}class="hidden"{/if}>&nbsp;</span>

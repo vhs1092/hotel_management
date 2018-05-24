@@ -14,20 +14,18 @@ class AdminAboutHotelBlockSettingController extends ModuleAdminController
 
         $this->fields_options = array(
             'global' => array(
-                'title' =>  $this->l('Hotel Interior Description'),
+                'title' =>  $this->l('Fotos del hotel'),
                 'icon' =>   'icon-cogs',
                 'fields' => array(
                     'HOTEL_INTERIOR_HEADING' => array(
-                        'title' => $this->l('Heading'),
+                        'title' => $this->l('Encabezado'),
                         'type' => 'text',
-                        'required' => true,
-                        'hint' => $this->l('Block Heading. Ex: Interior.')
+                        'required' => true
                     ),
                     'HOTEL_INTERIOR_DESCRIPTION' => array(
-                        'title' => $this->l('Description'),
+                        'title' => $this->l('Descripción'),
                         'type' => 'text',
-                        'required' => true,
-                        'hint' => $this->l('Block description.')
+                        'required' => true
                     ),
                 ),
                 'submit' => array(
@@ -44,7 +42,7 @@ class AdminAboutHotelBlockSettingController extends ModuleAdminController
                 'class' => 'fixed-width-xs'
             ),
             'name' => array(
-                'title' => $this->l('Interior Image'),
+                'title' => $this->l('Imagen'),
                 'align' => 'center',
                 'orderby' => false,
                 'filter' => false,
@@ -53,23 +51,23 @@ class AdminAboutHotelBlockSettingController extends ModuleAdminController
                 'class' => 'fixed-width-xs',
             ),
             'display_name' => array(
-                'title' => $this->l('Display Name'),
+                'title' => $this->l('Nombre'),
                 'align' => 'text-center',
             ),
             'active' => array(
-                'title' => $this->l('Active'),
+                'title' => $this->l('Estado'),
                 'align' => 'center',
                 'active' => 'status',
                 'type' => 'bool',
             ),
             'position' => array(
-                'title' => $this->l('Position'),
+                'title' => $this->l('Posición'),
                 'filter_key' => 'a!position',
                 'position' => 'position',
                 'align' => 'center',
             ),
             'date_add' => array(
-                'title' => $this->l('Date Add'),
+                'title' => $this->l('Fecha de creación'),
                 'align' => 'center',
                 'type' => 'datetime',
                 'filter_key' => 'a!date_add',
@@ -109,7 +107,7 @@ class AdminAboutHotelBlockSettingController extends ModuleAdminController
 
     public function renderList()
     {
-        $this->informations[] = $this->l('For better view, upload hotel interior image in multiple of 3.');
+        //$this->informations[] = $this->l('For better view, upload hotel interior image in multiple of 3.');
 
         $this->addRowAction('edit');
         $this->addRowAction('delete');

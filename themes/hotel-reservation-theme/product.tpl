@@ -37,12 +37,12 @@
 <div itemscope itemtype="http://schema.org/Product">
 {if isset($product_id_hotel) && $product_id_hotel}
 	<meta itemprop="url" content="{$link->getProductLink($product)}">
-	<div class="primary_block row">
+	<div class="primary_block row" style="margin-top: 5%; ">
 		<!-- {if !$content_only}
 			<div class="container">
 				<div class="top-hr"></div>
 			</div>
-		{/if} --><!-- by webkul -->
+		{/if} -->
 		{if isset($adminActionDisplay) && $adminActionDisplay}
 			<div id="admin-action" class="container">
 				<p class="alert alert-info">{l s='This product is not visible to your customers.'}
@@ -63,7 +63,6 @@
 			</p>
 		{/if}
 
-		<!-- By webkul to search panel on product page -->
 		{*
 		<div class="row margin-lr-0 search_block_container product_page_search">
 	      <form method="POST" autocomplete="on" autofill="on">
@@ -144,65 +143,6 @@
 	      </form>
 		</div>
 		*}
-
-		<div class="header-rmsearch-wrapper">
-		    <div class="header-rmsearch-primary">
-		        <div class="container">
-		            <div class="row header-rmsearch-inner-wrapper">
-		                <form method="POST" id="search_hotel_block_form">
-		                    {if isset($location_enable) && $location_enable}
-		                        <div class="form-group col-sm-6 col-lg-3">
-		                            <input type="text" class="form-control header-rmsearch-input"  id="hotel_location" name="hotel_location" autocomplete="off" placeholder="Hotel Location">
-		                            <div class="dropdown">
-		                                <ul class="location_search_results_ul"></ul>
-		                            </div>
-		                        </div>
-		                    {/if}    
-		                    <div class="form-group {if isset($location_enable) && $location_enable}col-sm-6 col-lg-3 {else}col-sm-6 col-lg-4{/if}">
-		                        <div class="dropdown">
-		                            <button class="form-control header-rmsearch-input {if isset($error) && $error == 1}error_border{/if}" type="button" data-toggle="dropdown">
-		                                {if isset($search_data)}
-											<span id="hotel_cat_name" class="pull-left">{$search_data['htl_dtl']['hotel_name']}</span>
-										{else}
-											<span id="hotel_cat_name" class="pull-left">{l s='Select Hotel'}</span>
-										{/if}
-										<!-- <span id="hotel_cat_name" class="pull-left">{l s='Select Hotel'}</span> -->
-										<input type="hidden" id="hotel_cat_id" name="hotel_cat_id" {if isset($search_data)}value="{$search_data['htl_dtl']['id_category']}"{/if}>
-										<input type="hidden" id="id_hotel" name="id_hotel" {if isset($search_data)}value="{$search_data['htl_dtl']['id']}"{/if}>
-										<input type="hidden" id="max_order_date" name="max_order_date" value="{if isset($max_order_date)}{$max_order_date}{/if}">
-										<span class="arrow_span">
-		                                    <i class="icon icon-angle-down"></i>
-		                                </span>
-		                            </button>
-		                            <ul class="dropdown-menu hotel_dropdown_ul">
-		                                {if isset($all_hotels_info) && $all_hotels_info}
-											{foreach from=$all_hotels_info key=htl_k item=htl_v}
-												<li class="hotel_name" data-id-hotel="{$name_val['id']}" data-hotel-cat-id="{$htl_v['id_category']}">
-													{$htl_v['hotel_name']}
-												</li>
-											{/foreach}
-										{/if} 
-		                            </ul>
-		                        </div>
-		                    </div>
-		                    <div class="form-group {if isset($location_enable) && $location_enable}col-sm-4 col-lg-2{else}col-sm-6 col-lg-3{/if}">
-		                        <input type="text" class="form-control header-rmsearch-input input-date" id="check_in_time" name="check_in_time" autocomplete="off" placeholder="Check In Date" {if isset($search_data)}value="{$search_data['date_from']}"{/if} />
-		                    </div>
-		                    <div class="form-group {if isset($location_enable) && $location_enable}col-sm-4 col-lg-2{else}col-sm-6 col-lg-3{/if}">
-		                        <input type="text" class="form-control header-rmsearch-input input-date" id="check_out_time" name="check_out_time" autocomplete="off" placeholder="Check Out Date" {if isset($search_data)}value="{$search_data['date_to']}"{/if} />
-		                    </div>
-		                    <div class="form-group {if isset($location_enable) && $location_enable}col-sm-4{else}col-sm-6{/if} col-lg-2">
-		                        <button type="submit" class="btn btn-default button button-medium exclusive" name="product_page_search_submit" id="search_room_submit">
-		                            <span>{l s='Search Now' mod='wkroomsearchblock'}</span>
-		                        </button>
-		                    </div>
-		                </form>    
-		            </div>
-		        </div>
-		    </div>
-		</div>
-
-		<!-- end -->
 
 		<!-- left infos-->
 		<div class="pb-left-column col-xs-12 col-sm-8 col-md-8" style="border:1px solid #cccccc">
@@ -401,7 +341,6 @@
 				<div class="arrow-down-div">
 					<div class="arrow-down"></div>
 				</div>
-				<!-- by webkul -->
 				<div class="booking_room_fields">
 					<form action="" method="post">	
 						<div class="form-group">
@@ -555,7 +494,7 @@
 				<h3 class="page-product-heading">{l s='More info'}</h3>
 				<div  class="rte">{$product->description}</div>
 			</section>
-		{/if} --><!-- by webkul commented -->
+		{/if} -->
 		{if isset($packItems) && $packItems|@count > 0}
 		<section id="blockpack">
 			<h3 class="page-product-heading">{l s='Pack content'}</h3>
@@ -731,7 +670,6 @@
 		{/if}
 	{/if}
 	{strip}
-		{* By webkul variable needed in product.js *}
 		{addJsDef total_avail_rms = $total_available_rooms}
 		{addJsDef max_order_date = $max_order_date}
 		{addJsDef booking_date_to = $date_to}

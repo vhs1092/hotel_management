@@ -97,7 +97,7 @@
 						<!-- Original -->
 						<!-- <span class="title">{l s='Total'}</span>
 						<span class="value">{sizeof($products)}</span> -->
-						<span class="title">{l s='Total Rooms'}</span>
+						<span class="title">{l s='Habitaciones'}</span>
 						<span class="value">{$order_detail_data|@count}</span>
 					</div>
 				</a>
@@ -272,7 +272,7 @@
 					<div class="panel">
 						<div class="panel-heading order_status_heading">
 							<i class="icon-credit-card"></i>
-							{l s='Order Status'}
+							{l s='Estado de la reservación'}
 						</div>
 						<div class="panel-content">
 							<div class="row">
@@ -456,7 +456,7 @@
 				</script>
 			</div>
 			<!-- Payments block -->
-			<div id="formAddPaymentPanel" class="panel">
+			<div id="formAddPaymentPanel" class="panel" style="display: none;">
 				<div class="panel-heading">
 					<i class="icon-money"></i>
 					{l s="Payment"} <span class="badge">{$order->getOrderPayments()|@count}</span>
@@ -958,7 +958,7 @@
 				<div class="panel">
 					<div class="panel-heading">
 						<i class="icon-shopping-cart"></i>
-						{l s='Rooms In This Order'} <span class="badge">{$order_detail_data|@count}</span><!-- by webkul products changes as rooms -->
+						{l s='Habitaciones'} <span class="badge">{$order_detail_data|@count}</span><!-- by webkul products changes as rooms -->
 					</div>
 					<!--by webkul this code is added for showing rooms information on the order detail page-->
 					<div class="row">
@@ -966,17 +966,15 @@
 							<table class="table" id="customer_cart_details">
 								<thead>
 									<tr>
-										<th class="text-center"><span class="title_box">{l s='Room No.'}</span></th>
-										<th class="text-center"><span class="title_box">{l s='Room Image'}</th>
-										<th class="text-center"><span class="title_box">{l s='Room Type'}</span></th>
-										<th class="text-center"><span class="title_box">{l s='Duration'}</span></th>
-										<th class="text-center"><span class="title_box">{l s='Unit Price'}</span></th>
-										<th class="text-center"><span class="title_box">{l s='Total Price'}</span></th>
-										<th class="text-center"><span class="title_box">{l s='Refund Stage'}</span></th>
-										<th class="text-center"><span class="title_box">{l s='Refund Status'}</span></th>
-										<th class="text-center"><span class="title_box">{l s='Reallocate Room'}</span></th>
+										<th class="text-center"><span class="title_box">{l s='Habitación No.'}</span></th>
+										<th class="text-center"><span class="title_box">{l s='Habitación Imagen'}</th>
+										<th class="text-center"><span class="title_box">{l s='Tipo'}</span></th>
+										<th class="text-center"><span class="title_box">{l s='Duración'}</span></th>
+										<th class="text-center"><span class="title_box">{l s='Precio por noche'}</span></th>
+										<th class="text-center"><span class="title_box">{l s='Precio total'}</span></th>
+				
 										{if ($can_edit && !$order->hasBeenDelivered())}
-										<th class="text-center"><span class="title_box">{l s='Edit Order'}</th>
+										<th class="text-center"><span class="title_box">{l s='Editar'}</th>
 										{/if}
 									</tr>
 								</thead>
@@ -1076,7 +1074,7 @@
 					{if !$order->hasBeenDelivered()}
 						<button type="button" id="add_product" class="btn btn-default">
 							<i class="icon-plus-sign"></i>
-							{l s='Add Rooms In Order'}
+							{l s='Agregar habitaciones'}
 						</button>
 					{/if}
 						<button id="add_voucher" class="btn btn-default" type="button" >
@@ -1211,14 +1209,14 @@
 											{assign var=order_shipping_price value=$order->total_shipping_tax_incl}
 										{/if}
 										<tr id="total_products">
-											<td class="text-right"><strong>{l s='Total Rooms Cost'}</strong></td>
+											<td class="text-right"><strong>{l s='Precio de habitaci{on'}</strong></td>
 											<td class="amount text-right nowrap">
 												<strong>{displayPrice price=$totalRoomsCostTE currency=$currency->id}</strong>
 											</td>
 											<td class="partial_refund_fields current-edit" style="display:none;"></td>
 										</tr>
 										<tr id="total_tax_order">
-											<td class="text-right"><strong>{l s='Total Tax'}</strong></td>
+											<td class="text-right"><strong>{l s='Total Impuestos'}</strong></td>
 											<td class="text-right nowrap">
 												<strong>{displayPrice price=$total_tax_in_order currency=$currency->id}</strong>
 											</td>

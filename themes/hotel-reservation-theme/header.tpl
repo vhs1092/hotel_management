@@ -66,6 +66,56 @@
 		<!-- <link href='https://fonts.googleapis.com/css?family=Parisienne' rel='stylesheet' type='text/css'> -->
 		<!-- <link href='https://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700,700italic' rel='stylesheet' type='text/css'> -->
 		<link href='https://fonts.googleapis.com/css?family=Oxygen:400,300,700' rel='stylesheet' type='text/css'>
+
+		<style type="text/css">
+			@media(min-width: 768px){
+			#menu_cont {
+		    width: 65%;
+		    position: relative;
+		    top: 0px;
+		    bottom: 0px;
+		    right: 0px;
+		    z-index: 1;
+		    background-color: rgba(64, 64, 64, 0);
+		    padding-top: 10px;
+		    height: 80px;
+		    float: left;
+			}
+
+			ul.nav.nav-pills.nav-stacked.wk-nav-style {
+			   float: left;
+			   display: flex;
+			   margin: 0;
+			   border: 0;
+			}
+
+			div#menu_cont .row {
+			   float: left;
+			}
+
+			span.pull-right.close_navbar {
+			   display: none;
+			}
+			.menu_cont_right {
+			transform: translate(0)!important;
+			}
+			.menuicon {
+			    display: none;
+			}
+			.nav-pills > li > a {
+			    color: white!important;
+			}
+
+
+			}
+		</style>
+		{if $page_name != 'index'}
+		<style type="text/css">
+			.columns-container {
+			  margin-top: 5%!important;
+			}
+		</style>
+		{/if}
 	</head>
 	<body{if isset($page_name)} id="{$page_name|escape:'html':'UTF-8'}"{/if} class="{if isset($page_name)}{$page_name|escape:'html':'UTF-8'}{/if}{if isset($body_classes) && $body_classes|@count} {implode value=$body_classes separator=' '}{/if}{if $hide_left_column} hide-left-column{else} show-left-column{/if}{if $hide_right_column} hide-right-column{else} hide-right-column{/if}{if isset($content_only) && $content_only} content_only{/if} lang_{$lang_iso}" style="{if $page_name == 'index'}height: 100%;{/if}">
 	{if !isset($content_only) || !$content_only}
@@ -91,7 +141,11 @@
 							</div>
 						</div>
 					</div>
-					<div>
+					<div style="position: fixed;
+						    width: 100%;
+						    left: 0;
+						    background: rgba(64, 64, 64, 0.38);
+						    height: 80px;">
 						<div class="container">
 							<div class="row">
 

@@ -17,77 +17,41 @@ class AdminHotelGeneralSettingsController extends ModuleAdminController
         }
         $this->fields_options = array(
             'general' => array(
-                'title' => $this->l('Configuration'),
+                'title' => $this->l('Configuración'),
                 'fields' => array(
-                    'WK_HOTEL_LOCATION_ENABLE' => array(
-                        'title' => $this->l('Enable Hotel Location'),
-                        'cast' => 'intval',
-                        'type' => 'bool',
-                        'default' => '0',
-                        'values' => array(
-                            array(
-                                'id' => 'active_on',
-                                'value' => 1,
-                            ),
-                            array(
-                                'id' => 'active_off',
-                                'value' => 0,
-                            ),
-                        ),
-                        'hint' => $this->l('whether you want to show Hotel Location field on search page.'),
-                    ),
-                    'WK_ROOM_LEFT_WARNING_NUMBER' => array(
-                        'title' => $this->l('Display remaining Number of rooms when the rooms are lower than or equal this number'),
-                        'hint' => $this->l('Mention the minimum quantity after which alert message for remaining rooms will be displayed to customers.'),
-                        'validation' => 'isInt',
-                        'cast' => 'intval',
-                        'type' => 'text',
-                        'visibility' => Shop::CONTEXT_ALL,
-                    ),
                     'WK_HOTEL_GLOBAL_CONTACT_EMAIL' => array(
-                        'title' => $this->l('Global Email'),
-                        'hint' => $this->l('Email which you want to show a customer to email you.'),
+                        'title' => $this->l('Email'),
                         'type' => 'text',
                         'validation' => 'isEmail',
                     ),
                     'WK_HOTEL_GLOBAL_CONTACT_NUMBER' => array(
-                        'title' => $this->l('Global Contact Number'),
-                        'hint' => $this->l('Phone Number which you want to show a customer to contact you.'),
+                        'title' => $this->l('Telefono'),
                         'type' => 'text',
                         'validation' => 'isPhoneNumber',
                     ),
                     'WK_HTL_ESTABLISHMENT_YEAR' => array(
-                        'title' => $this->l('Website Launch Year'),
-                        'hint' => $this->l('The year when your hotel site was launched.'),
+                        'title' => $this->l('Año de lanzamiento del sitio'),
                         'type' => 'text',
                     ),
                     'WK_HTL_CHAIN_NAME' => array(
-                        'title' => $this->l('Hotel Name'),
-                        'hint' => $this->l('Enter Hotel name in case of single hotel or enter your hotels chain name in case of multiple hotels'),
+                        'title' => $this->l('Nombre del hotel'),
                         'type' => 'text',
                     ),
-                    'WK_HTL_TAG_LINE' => array(
-                        'title' => $this->l('Hotel Tag Line'),
-                        'hint' => $this->l('This will display hotel tag line in hotel page.'),
-                        'type' => 'textarea',
-                    ),
                     'WK_HTL_SHORT_DESC' => array(
-                        'title' => $this->l('Hotel Sort Description'),
-                        'hint' => $this->l('This will display hotel short description in footer. Note: number of letters must be less then 220.'),
+                        'title' => $this->l('Descripción corta'),
                         'type' => 'textarea',
                     ),
                     'WK_HTL_HEADER_IMAGE' => array(
-                        'title' => $this->l('Header Background Image'),
+                        'title' => $this->l('Imagen de banner'),
                         'type' => 'file',
                         'image' => $img_exist ? $image : false,
-                        'hint' => $this->l('This image appears as home page header background image.'),
                         'name' => 'htl_header_image',
                         'url' => _PS_IMG_,
                     ),
                 ),
                 'submit' => array('title' => $this->l('Save')),
             ),
-            'advancedPayment' => array(
+            /*'advancedPayment' => array(
                 'title' => $this->l('Advanced Payment Global Setting'),
                 'fields' => array(
                     'WK_ALLOW_ADVANCED_PAYMENT' => array(
@@ -133,7 +97,7 @@ class AdminHotelGeneralSettingsController extends ModuleAdminController
                     ),
                 ),
                 'submit' => array('title' => $this->l('Save')),
-            ),
+            ),*/
             /*'orderconfirmation' => array(
                 'title' => $this->l('Backorder Setting'),
                 'fields' => array(
@@ -164,7 +128,7 @@ class AdminHotelGeneralSettingsController extends ModuleAdminController
                 ),
                 'submit' => array('title' => $this->l('Save')),
             ),*/
-            'googleMap' => array(
+            /*'googleMap' => array(
                 'title' => $this->l('Google Map Setting'),
                 'fields' => array(
                     'WK_GOOGLE_ACTIVE_MAP' => array(
@@ -212,7 +176,7 @@ class AdminHotelGeneralSettingsController extends ModuleAdminController
                                 'title' => $this->l('Save'),
                                 // 'name' => 'submitGoogleMapSetting'
                                 ),
-            ),
+            ),*/
         );
         parent::__construct();
     }
@@ -232,14 +196,14 @@ class AdminHotelGeneralSettingsController extends ModuleAdminController
                     }
                 }
             }
-            if (Tools::getValue('WK_ADVANCED_PAYMENT_GLOBAL_MIN_AMOUNT') <= 0) {
+            /*if (Tools::getValue('WK_ADVANCED_PAYMENT_GLOBAL_MIN_AMOUNT') <= 0) {
                 $this->errors[] = Tools::displayError('Minimum partial payment percentage should be more than 0.');
             }
             if (Tools::getValue('WK_GOOGLE_ACTIVE_MAP')) {
                 if (!Tools::getValue('WK_GOOGLE_API_KEY')) {
                     $this->errors[] = Tools::displayError('Please enter Google API key.');
                 }
-            }
+            }*/
         }
 
         parent::postProcess();

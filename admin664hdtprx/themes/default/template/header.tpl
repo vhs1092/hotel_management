@@ -136,15 +136,15 @@
 						<div class="dropdown-menu notifs_dropdown">
 							<section id="orders_notif_wrapper" class="notifs_panel">
 								<div class="notifs_panel_header">
-									<h3>{l s='Latest Orders'}</h3>
+									<h3>{l s='Ultimas reservaciones'}</h3>
 								</div>
 								<div id="list_orders_notif" class="list_notif">
 									<span class="no_notifs">
-										{l s='No new orders have been placed on your shop.'}
+										{l s='No se han registrado nuevas reservaciones'}
 									</span>
 								</div>
 								<div class="notifs_panel_footer">
-									<a href="index.php?controller=AdminOrders&amp;token={getAdminToken tab='AdminOrders'}">{l s='Show all orders'}</a>
+									<a href="index.php?controller=AdminOrders&amp;token={getAdminToken tab='AdminOrders'}">{l s='Mostrar todas las reservaciones'}</a>
 								</div>
 							</section>
 						</div>
@@ -165,7 +165,7 @@
 								</div>
 								<div id="list_customers_notif" class="list_notif">
 									<span class="no_notifs">
-										{l s='No new customers have registered on your shop.'}
+										{l s='No hay nuevos clientes registrados'}
 									</span>
 								</div>
 								<div class="notifs_panel_footer">
@@ -190,7 +190,7 @@
 								</div>
 								<div id="list_customer_messages_notif" class="list_notif">
 									<span class="no_notifs">
-										{l s='No new messages have been posted on your shop.'}
+										{l s='No se han recibido nuevos mensajes.'}
 									</span>
 								</div>
 								<div class="notifs_panel_footer">
@@ -290,7 +290,7 @@
 {if {$base_url}}
 					<li>
 						<a href="{if isset($base_url_tc)}{$base_url_tc|escape:'html':'UTF-8'}{else}{$base_url|escape:'html':'UTF-8'}{/if}" id="header_foaccess" class="_blank" title="{l s='View my shop'}">
-							<span class="string-long">{l s='My shop'}</span>
+							<span class="string-long">{l s='Ir a página web'}</span>
 							<span class="string-short">{l s='Shop'}</span>
 						</a>
 						{if isset($maintenance_mode) && $maintenance_mode == true}

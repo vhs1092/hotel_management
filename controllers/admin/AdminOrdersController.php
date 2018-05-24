@@ -104,10 +104,6 @@ class AdminOrdersControllerCore extends AdminController
                 'title' => $this->l('Customer'),
                 'havingFilter' => true,
             ),
-            'order_source' => array(
-                'title' => $this->l('Order Source'),
-                'havingFilter' => true,
-            ),
         );
 
         if (Configuration::get('PS_B2B_ENABLE')) {
@@ -128,14 +124,7 @@ class AdminOrdersControllerCore extends AdminController
                 'callback' => 'setOrderCurrency',
                 'badge_success' => true,
             ),
-            'amount_due' => array(
-                'title' => $this->l('Due Amount'),
-                'align' => 'text-right',
-                'type' => 'price',
-                'currency' => true,
-                'callback' => 'setOrderCurrency',
-                'badge_success' => true,
-            ),
+
             'payment' => array(
                 'title' => $this->l('Payment'),
             ),

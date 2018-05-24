@@ -13,15 +13,8 @@
                     <div class="owl-carousel">
                         {foreach $testimonials_data as $tesimonial}
                             <div class="row">
-                                <div class='col-xs-4 col-sm-offset-1 col-sm-2'>
-                                    <img src="{$module_dir}views/img/icon-double-codes.png" class="img-responsive">
-                                </div>
-                                <div class='col-xs-12 col-sm-7'>
-                                    <div class="row">
-                                        <div class="col-sm-12 testimonialContentContainer">
-                                            <p class="testimonialContentText">{$tesimonial.testimonial_content}</p>
-                                        </div>
-                                    </div>
+                                
+                                <div class='col-xs-12 col-sm-12'>
                                     <div class="row">
                                         <div class="col-sm-12 testimonialPersonDetail">
                                             {if isset($tesimonial.testimonial_image) && $tesimonial.testimonial_image}
@@ -30,7 +23,12 @@
                                             <p class="testimonialPersonName">{$tesimonial.name}</p>
                                             <p class="testimonialPersonDesig">{$tesimonial.designation}</p>
                                         </div>
+                                   
+                                        <div class="col-sm-12 testimonialContentContainer">
+                                            <p class="testimonialContentText">{$tesimonial.testimonial_content}</p>
+                                        </div>
                                     </div>
+
                                 </div>
                             </div>
                         {/foreach}
@@ -40,3 +38,9 @@
         {/if}
     </div>
 </div>
+<style type="text/css">
+.testimonialPersonImg {
+    width: 40%!important;
+}
+
+</style>

@@ -9,23 +9,21 @@ class AdminTestimonialsModuleSettingController extends ModuleAdminController
 		$this->context = Context::getContext();
 		$this->fields_options = array(
 			'featuresmodulesetting' => array(
-				'title' =>	$this->l('Hotel Testimonials Setting'),
+				'title' =>	$this->l('Acerca de nosotros'),
 				'fields' =>	array(
 					'HOTEL_TESIMONIAL_BLOCK_HEADING' => array(
-						'title' => $this->l('Testimonial Blog Title'),
+						'title' => $this->l('Acerca de nosotros'),
 						'type' => 'text',
 						'required' => 'true',
-						'id' => 'HOTEL_TESIMONIAL_BLOCK_HEADING',
-						'hint' => $this->l('Testimonial Block Heading. Ex. Guest Testimonials.'),
+						'id' => 'HOTEL_TESIMONIAL_BLOCK_HEADING'
 					),
 					'HOTEL_TESIMONIAL_BLOCK_CONTENT' => array(
-						'title' => $this->l('Testimonial Blog Description'),
+						'title' => $this->l('Description'),
 						'type' => 'textarea',
 						'required' => 'true',
 						'id' => 'HOTEL_TESIMONIAL_BLOCK_CONTENT',
 						'rows' => '4',
-						'cols' => '2',
-						'hint' => $this->l('Testimonial Block Detail.'),
+						'cols' => '2'
 					),
 				),
 				'submit' => array('title' => $this->l('Save'))
@@ -37,26 +35,26 @@ class AdminTestimonialsModuleSettingController extends ModuleAdminController
 				'align' => 'center',
 			),
 			'image' => array(
-                'title' => $this->l('Person Image'),
+                'title' => $this->l('Imagen'),
                 'align' => 'center',
                 'image' => 'testimonial_image',
                 'orderby' => false,
                 'search' => false
             ),
 			'active' => array(
-                'title' => $this->l('Active'),
+                'title' => $this->l('Estado'),
                 'align' => 'center',
                 'active' => 'status',
                 'type' => 'bool',
             ),
             'position' => array(
-                'title' => $this->l('Position'),
+                'title' => $this->l('Posición'),
                 'filter_key' => 'a!position',
                 'position' => 'position',
                 'align' => 'center',
             ),
             'date_add' => array(
-                'title' => $this->l('Date Add'),
+                'title' => $this->l('Fecha de creación'),
                 'align' => 'center',
                 'type' => 'datetime',
                 'filter_key' => 'a!date_add',
@@ -111,44 +109,40 @@ class AdminTestimonialsModuleSettingController extends ModuleAdminController
 
 		$this->fields_form = array(
             'legend' => array(
-                'title' => $this->l('Hotel Testimonial Configuration'),
+                'title' => $this->l('Acerca de nosotros'),
                 'icon' => 'icon-globe'
             ),
             'input' => array(
                 array(
                     'type' => 'text',
-                    'label' => $this->l('Person Name'),
+                    'label' => $this->l('Titulo'),
                     'name' => 'name',
-                    'required' => true,
-                    'hint' => $this->l('Testimonial person name')
+                    'required' => true
                 ),
                 array(
                     'type' => 'text',
-                    'label' => $this->l('Person\'s Designation'),
+                    'label' => $this->l('Subtitulo'),
                     'name' => 'designation',
-                    'required' => true,
-                    'hint' => $this->l('Testimonial person Designation')
+                    'required' => true
                 ),
                 array(
                     'type' => 'textarea',
                     'rows' => '4',
-                    'label' => $this->l('Testimonial Description'),
+                    'label' => $this->l('Descripción'),
                     'name' => 'testimonial_content',
-                    'required' => true,
-                    'hint' => $this->l('Testimonial Content')
+                    'required' => true
                 ),
                 array(
 					'type' => 'file',		
-					'label' => $this->l('Person image'),		
+					'label' => $this->l('Imagen'),		
 					'name' => 'testimonial_image',		
 					'display_image' => true,
-					'image' => $img_exist ? $image : false,	
-					'hint' => $this->l('Upload an image of the person to whom this testimonial belongs.'),
+					'image' => $img_exist ? $image : false,
 					'required' => true,
 				),
 				array(
                     'type' => 'switch',
-                    'label' => $this->l('Active'),
+                    'label' => $this->l('Estado'),
                     'name' => 'active',
                     'required' => false,
                     'is_bool' => true,
@@ -195,11 +189,7 @@ class AdminTestimonialsModuleSettingController extends ModuleAdminController
 		if ($testimonial_content == '')
 			$this->errors[] = Tools::displayError('Testimonial content is a required field.');
 
-		if ($_FILES['testimonial_image']) {
-			$error = HotelImage::validateImage($_FILES['testimonial_image']);
-			if ($error)
-				$this->errors[] = Tools::displayError('Image format not recognized, allowed formats are: .gif, .jpg, .png', false);
-		}
+		
 
 		if (!count($this->errors))
 		{

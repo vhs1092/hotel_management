@@ -27,7 +27,7 @@
 <div class="row">
     <section class="col-xs-12 col-sm-12">
         <div class="row margin-lr-0 footer-section-heading">
-            <p>{l s='Follow us on' mod='blocksocial'}</p>
+            <p>{l s='Siguenos en' mod='blocksocial'}</p>
             <hr/>
         </div>
         <div class="row margin-lr-0" id="social_block">

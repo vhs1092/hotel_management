@@ -39,8 +39,6 @@ class AdminCustomersControllerCore extends AdminController
     public function __construct()
     {
         $this->bootstrap = true;
-        $this->required_database = true;
-        $this->required_fields = array('newsletter','optin');
         $this->table = 'customer';
         $this->className = 'Customer';
         $this->lang = false;
@@ -79,14 +77,14 @@ class AdminCustomersControllerCore extends AdminController
                 'align' => 'text-center',
                 'class' => 'fixed-width-xs'
             ),
-            'title' => array(
+            /*'title' => array(
                 'title' => $this->l('Social title'),
                 'filter_key' => 'a!id_gender',
                 'type' => 'select',
                 'list' => $titles_array,
                 'filter_type' => 'int',
                 'order_key' => 'gl!name'
-            ),
+            ),*/
             'firstname' => array(
                 'title' => $this->l('First name')
             ),
@@ -130,13 +128,13 @@ class AdminCustomersControllerCore extends AdminController
                 'callback' => 'printNewsIcon',
                 'orderby' => false
             ),
-            'optin' => array(
+            /*'optin' => array(
                 'title' => $this->l('Opt-in'),
                 'align' => 'text-center',
                 'type' => 'bool',
                 'callback' => 'printOptinIcon',
                 'orderby' => false
-            ),
+            ),*/
             'date_add' => array(
                 'title' => $this->l('Registration'),
                 'type' => 'date',
@@ -452,28 +450,7 @@ class AdminCustomersControllerCore extends AdminController
                     'disabled' =>  (bool)!Configuration::get('PS_CUSTOMER_NWSL'),
                     'hint' => $this->l('This customer will receive your newsletter via email.')
                 ),
-                array(
-                    'type' => 'switch',
-                    'label' => $this->l('Opt-in'),
-                    'name' => 'optin',
-                    'required' => false,
-                    'class' => 't',
-                    'is_bool' => true,
-                    'values' => array(
-                        array(
-                            'id' => 'optin_on',
-                            'value' => 1,
-                            'label' => $this->l('Enabled')
-                        ),
-                        array(
-                            'id' => 'optin_off',
-                            'value' => 0,
-                            'label' => $this->l('Disabled')
-                        )
-                    ),
-                    'disabled' =>  (bool)!Configuration::get('PS_CUSTOMER_OPTIN'),
-                    'hint' => $this->l('This customer will receive your ads via email.')
-                ),
+
             )
         );
 

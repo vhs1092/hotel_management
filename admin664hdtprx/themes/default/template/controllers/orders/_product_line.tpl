@@ -92,37 +92,10 @@
 		{/if}
 	</td>
 	
-	<td class="text-center stage_name">
-		<p>
-			{if isset($data['stage_name']) && $data['stage_name']}
-				{$data['stage_name']}
-			{else}
-				--
-			{/if}
-		</p>
-	</td>
-	<td class="text-center status_name">
-		<p>
-			{if $data['stage_name'] == 'Refunded' || $data['stage_name'] == 'Rejected'}
-				{l s="Done!"}
-			{else if $data['stage_name'] == 'Waitting' || $data['stage_name'] == 'Accepted'}
-				{l s="Pending..."}
-			{else}
-				--
-			{/if}
-		</p>
-	</td>
+
 
 	{if $data.booking_type == 1}
-	<td class="text-center">
-		{if $data['stage_name'] == 'Refunded' || $data['stage_name'] == 'Rejected'}
-			<p class="text-center">----</p>
-		{else}
-			<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#mySwappigModal" data-id_order="{$order->id}" data-room_num='{$data.room_num}' data-date_from='{$data.date_from}' data-date_to='{$data.date_to}' data-id_room='{$data.id_room}' data-cust_name='{$data.alloted_cust_name}' data-cust_email='{$data.alloted_cust_email}' data-avail_rm_swap='{$data.avail_rooms_to_swap|@json_encode}' data-avail_rm_realloc='{$data.avail_rooms_to_realloc|@json_encode}'>
-				{l s='Reallocate Room' mod='hotelreservationsystem'}
-			</button>
-		{/if}
-	</td>
+
 	{/if}
 	{if ($can_edit && !$order->hasBeenDelivered())}
 		<td class="product_invoice" style="display: none;">

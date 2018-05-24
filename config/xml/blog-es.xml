@@ -6,6 +6,14 @@
     <language>es</language>
      <atom:link href="https://www.prestashop.com/es/blog/feed.xml" rel="self" type="application/rss+xml" />
       <item>
+    <title>¿Qué es la canibalización SEO y cómo evitarla en tu eCommerce?</title>
+    <link>https://www.prestashop.com/es/blog/que-es-canibalizacion-seo</link>
+    <description>¿Sabías que es probable que la web de tu tienda online pueda estar afectada por la canibalización SEO o de keywords?</description>
+     <pubDate>Tue, 22 May 2018 12:31:41 +0200</pubDate>
+ <dc:creator>Jose Luis López</dc:creator>
+ <guid isPermaLink="false">https://www.prestashop.com/es/blog/que-es-canibalizacion-seo</guid>
+  </item>
+  <item>
     <title>¿Cómo reducir el tamaño y peso de las fotos de tu eCommerce?</title>
     <link>https://www.prestashop.com/es/blog/reducir-tamano-fotos</link>
     <description>¿Conoces la verdadera importancia de bajar el peso y reducir el tamaño de las fotos dentro de la web de tu negocio online?</description>
@@ -76,14 +84,6 @@
      <pubDate>Wed, 25 Apr 2018 12:18:17 +0200</pubDate>
  <dc:creator>Jose Facchin</dc:creator>
  <guid isPermaLink="false">https://www.prestashop.com/es/blog/que-es-memoria-cache</guid>
-  </item>
-  <item>
-    <title>¿Cómo crear una página &amp;quot;Sobre nosotros&amp;quot; que enamore a tus usuarios?</title>
-    <link>https://www.prestashop.com/es/blog/seis-sencillas-sugerencias-para-tu-pagina-sobre-nosotros</link>
-    <description>¿Sabías que la sección “Sobre nosotros” o “quiénes somos” es una de las páginas más visitadas en la mayoría de los eCommerce?</description>
-     <pubDate>Wed, 25 Apr 2018 08:44:57 +0200</pubDate>
- <dc:creator>Mariela Quiroga</dc:creator>
- <guid isPermaLink="false">https://www.prestashop.com/es/blog/seis-sencillas-sugerencias-para-tu-pagina-sobre-nosotros</guid>
   </item>
   </channel>
 </rss>

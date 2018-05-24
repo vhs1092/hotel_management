@@ -777,7 +777,7 @@ class Blocknewsletter extends Module
 					'icon' => 'icon-cogs'
 				),
 				'input' => array(
-					array(
+					/*array(
 						'type' => 'switch',
 						'label' => $this->l('Would you like to send a verification email after subscription?'),
 						'name' => 'NW_VERIFICATION_EMAIL',
@@ -793,7 +793,7 @@ class Blocknewsletter extends Module
 								'label' => $this->l('No')
 							)
 						),
-					),
+					),*/
 					array(
 						'type' => 'switch',
 						'label' => $this->l('Would you like to send a confirmation email after subscription?'),
@@ -811,13 +811,13 @@ class Blocknewsletter extends Module
 							)
 						),
 					),
-					array(
+					/*array(
 						'type' => 'text',
 						'label' => $this->l('Welcome voucher code'),
 						'name' => 'NW_VOUCHER_CODE',
 						'class' => 'fixed-width-md',
 						'desc' => $this->l('Leave blank to disable by default.')
-					),
+					),*/
 				),
 				'submit' => array(
 					'title' => $this->l('Save'),

@@ -10,26 +10,24 @@ class AdminFeaturesModuleSettingController extends ModuleAdminController
 
 		$this->fields_options = array(
 			'global' => array(
-				'title' =>	$this->l('Hotel Features Setting'),
+				'title' =>	$this->l('Comodidades'),
 				'icon' =>   'icon-cogs',
 				'fields' =>	array(
 					'HOTEL_AMENITIES_HEADING' => array(
-						'title' => $this->l('Feature Block Title'),
+						'title' => $this->l('Titulo'),
 						'type' => 'text',
 						'required' => 'true',
 						'validation' => 'isCatalogName',
-						'id' => 'HOTEL_AMENITIES_HEADING',
-						'hint' => $this->l('Block Heading. Ex: Amenities.'),
+						'id' => 'HOTEL_AMENITIES_HEADING'
 					),
 					'HOTEL_AMENITIES_DESCRIPTION' => array(
-						'title' => $this->l('Feature Block Description'),
+						'title' => $this->l('Descripción'),
 						'type' => 'textarea',
 						'required' => 'true',
 						'id' => 'HOTEL_AMENITIES_DESCRIPTION',
 						'validation' => 'isCatalogName',
 						'rows' => '4',
-						'cols' => '2',
-						'hint' => $this->l('Block description.'),
+						'cols' => '2'
 					),
 				),
 				'submit' => array('title' => $this->l('Save'))
@@ -49,23 +47,23 @@ class AdminFeaturesModuleSettingController extends ModuleAdminController
 	            'search' => false
 	        ),
 	        'feature_title' => array(
-                'title' => $this->l('Amenity Title'),
+                'title' => $this->l('Titulo'),
                 'align' => 'text-center',
             ),
 	        'active' => array(
-                'title' => $this->l('Active'),
+                'title' => $this->l('Estado'),
                 'align' => 'center',
                 'active' => 'status',
                 'type' => 'bool',
             ),
             'position' => array(
-                'title' => $this->l('Position'),
+                'title' => $this->l('Posición'),
                 'filter_key' => 'a!position',
                 'position' => 'position',
                 'align' => 'center',
             ),
 			'date_add' => array(
-				'title' => $this->l('Date Add'),
+				'title' => $this->l('Fecha creación'),
 				'align' => 'center',
 			),
 		);

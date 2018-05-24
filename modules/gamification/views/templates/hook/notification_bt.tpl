@@ -40,7 +40,7 @@
 	<div class="dropdown-menu notifs_dropdown" id="dropdown_gamification">
 		<section id="gamification_notif_wrapper" class="notifs_panel" style="width:325px">
 			<header class="notifs_panel_header">
-				<h3>{l s='Your Merchant Expertise' mod='gamification'}
+				<h3>{l s='Yasdasd' mod='gamification'}
 					<span class="label label-default" style="float:right">{l s='Level' mod='gamification'} {$current_level|intval} : {$current_level_percent|intval} %</span>
 				</h3>
 			</header>

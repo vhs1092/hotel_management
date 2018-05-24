@@ -1,4 +1,4 @@
-<div class="pull-right clearfix nav_menu_padding">
+<div class="pull-right clearfix nav_menu_padding menuicon">
 	<button type="button" class="nav_toggle">
 		<span class="icon-bar"></span>
 		<span class="icon-bar"></span>
@@ -15,7 +15,7 @@
 			<div class="row">
 				<ul class="nav nav-pills nav-stacked wk-nav-style">
 					<li>
-						<a class="navigation-link" href="{if isset($force_ssl) && $force_ssl}{$base_dir_ssl}{else}{$base_dir}{/if}">{l s='Home' mod='blocknevigationmenu'}</a>
+						<a class="navigation-link" href="{if isset($force_ssl) && $force_ssl}{$base_dir_ssl}{else}{$base_dir}{/if}">{l s='Inicio' mod='blocknevigationmenu'}</a>
 					</li>
 					{hook h="displayDefaultNavigationHook"}
 					

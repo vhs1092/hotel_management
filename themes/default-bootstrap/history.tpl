@@ -27,13 +27,13 @@
 		{l s='My account'}
 	</a>
 	<span class="navigation-pipe">{$navigationPipe}</span>
-	<span class="navigation_page">{l s='Order history'}</span>
+	<span class="navigation_page">{l s='Historial de reservaciones'}</span>
 {/capture}
 {include file="$tpl_dir./errors.tpl"}
-<h1 class="page-heading bottom-indent">{l s='Order history'}</h1>
-<p class="info-title">{l s='Here are the orders you\'ve placed since your account was created.'}</p>
+<h1 class="page-heading bottom-indent">{l s='Historial de reservaciones'}</h1>
+<p class="info-title">{l s='Reservaciones que has hecho'}</p>
 {if $slowValidation}
-	<p class="alert alert-warning">{l s='If you have just placed an order, it may take a few minutes for it to be validated. Please refresh this page if your order is missing.'}</p>
+	<p class="alert alert-warning">{l s='Si tu reservacion no aparece, por favor espera un momento y recarga la página.'}</p>
 {/if}
 <div class="block-center" id="block-history">
 	{if $orders && count($orders)}

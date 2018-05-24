@@ -12,6 +12,7 @@ class WkHotelInteriorImage extends ObjectModel
     public static $definition = array(
         'table' => 'htl_interior_image',
         'primary' => 'id',
+        'multilang' => true,
         'fields' => array(
             'name' =>               array('type' => self::TYPE_STRING),
             'display_name' =>       array('type' => self::TYPE_STRING, 'validate' => 'isCatalogName'),
