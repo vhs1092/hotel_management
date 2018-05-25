@@ -695,7 +695,7 @@ class OrderOpcControllerCore extends ParentOrderController
     protected function _getPaymentMethods()
     {
         if (!$this->isLogged) {
-            return '<p class="warning">'.Tools::displayError('Please sign in to see payment methods.').'</p>';
+            return '<p class="warning">'.Tools::displayError('Porfavor registrate o inicia sesión para continuar.').'</p>';
         }
         if ($this->context->cart->OrderExists()) {
             return '<p class="warning">'.Tools::displayError('Error: This order has already been validated.').'</p>';

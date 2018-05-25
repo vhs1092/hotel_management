@@ -129,7 +129,7 @@ class AdminCustomerThreadsControllerCore extends AdminController
         $this->shopLinkType = 'shop';
 
         $this->fields_options = array(
-            'contact' => array(
+            /*'contact' => array(
                 'title' =>    $this->l('Contact options'),
                 'fields' =>    array(
                     'PS_CUSTOMER_SERVICE_FILE_UPLOAD' => array(
@@ -145,8 +145,8 @@ class AdminCustomerThreadsControllerCore extends AdminController
                         )
                 ),
                 'submit' => array('title' => $this->l('Save'))
-            ),
-            'general' => array(
+            ),*/
+            /*'general' => array(
                 'title' =>    $this->l('Customer service options'),
                 'fields' =>    array(
                     'PS_SAV_IMAP_URL' => array(
@@ -212,7 +212,7 @@ class AdminCustomerThreadsControllerCore extends AdminController
                     ),
                 ),
                 'submit' => array('title' => $this->l('Save')),
-            ),
+            ),*/
         );
 
         parent::__construct();

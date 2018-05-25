@@ -82,13 +82,13 @@
 		<table id="cart_summary" class="table table-bordered {if $PS_STOCK_MANAGEMENT}stock-management-on{else}stock-management-off{/if}">
 			<thead>
 				<tr class="table_head">
-					<th class="cart_product">{l s='Room Image'}</th>
-					<th class="cart_description">{l s='Room Description'}</th>
-					<th>{l s='Room Capacity'}</th>
-					<th class="cart_unit">{l s='Unit Price'}</th>
-					<th>{l s='Rooms'}</th>
-					<th>{l s='Check-in Date'}</th>
-					<th>{l s='Check-out Date'}</th>
+					<th class="cart_product">{l s='Imagen'}</th>
+					<th class="cart_description">{l s='Descripción'}</th>
+					<th>{l s='Capacidad'}</th>
+					<th class="cart_unit">{l s='Precio por habitación'}</th>
+					<th>{l s='Habitaciones'}</th>
+					<th>{l s='Fecha de entrada'}</th>
+					<th>{l s='Fecha de salida'}</th>
 					<th class="cart_delete last_item">&nbsp;</th>
 					<th class="cart_total">{l s='Total'}</th>
 				</tr>
@@ -130,7 +130,7 @@
 											{/foreach}
 										</ul>
 									{/if}
-									<form action="{if $opc}{$link->getPageLink('order-opc', true)}{else}{$link->getPageLink('order', true)}{/if}" method="post" id="voucher">
+									<form action="{if $opc}{$link->getPageLink('order-opc', true)}{else}{$link->getPageLink('order', true)}{/if}" method="post" id="voucher" style="display: none;">
 										<fieldset>
 											<h4>{l s='Vouchers'}</h4>
 											<input type="text" class="discount_name form-control" id="discount_name" name="discount_name" value="{if isset($discount_name) && $discount_name}{$discount_name}{/if}" />
@@ -148,7 +148,7 @@
 									{/if}
 								{/if}
 							</td>
-							<td colspan="4" class="text-right">{if $display_tax_label}{l s='Total Rooms Cost (tax excl.)'}{else}{l s='Total Rooms Cost'}{/if}</td>
+							<td colspan="4" class="text-right">{if $display_tax_label}{l s='Costo de habitaciones (sin iva)'}{else}{l s='COsto de habitaciones'}{/if}</td>
 							<td colspan="3" class="price" id="total_product">{displayPrice price=$total_products}</td>
 						</tr>
 					{else}
@@ -311,13 +311,13 @@
 
 				{if $use_taxes && $show_taxes && $total_tax != 0 }
 					{if $priceDisplay != 0}
-					<tr class="table_tfoot table_total_tr cart_total_price">
+					<!--tr class="table_tfoot table_total_tr cart_total_price">
 						<td colspan="4" class="text-right">{if $display_tax_label}{l s='Total (tax excl.)'}{else}{l s='Total'}{/if}</td>
 						<td colspan="3" class="price" id="total_price_without_tax">{displayPrice price=$total_price_without_tax}</td>
-					</tr>
+					</tr-->
 					{/if}
 					<tr class="table_tfoot cart_total_tax">
-						<td colspan="4" class="text-right">{l s='Tax'}</td>
+						<td colspan="4" class="text-right">{l s='IVA'}</td>
 						<td colspan="3" class="price" id="total_tax">{displayPrice price=$total_tax}</td>
 					</tr>
 				{/if}

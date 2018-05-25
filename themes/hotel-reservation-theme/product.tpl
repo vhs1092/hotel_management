@@ -158,7 +158,7 @@
 							<div class="room_ratting_no" style="background-image:url({$ratting_img_path});"></div>
 						{/if}
 					{/for}
-					<span class="num_reviews">{$num_reviews} &nbsp;{l s='Reviews'}</span>
+					<span class="num_reviews">{$num_reviews} &nbsp;{l s='Comentarios'}</span>
 				{/if}
 			</div>
 			<!-- product img-->
@@ -252,7 +252,7 @@
 			<section class="page-product-box col-sm-12">
 
 				<ul class="nav nav-tabs product_description_tabs">
-					<li class="active"><a href="#room_info_tab" class="idTabHrefShort" data-toggle="tab">{l s='Room Information' mod='productcomments'}</a></li>
+					<li class="active"><a href="#room_info_tab" class="idTabHrefShort" data-toggle="tab">Información de la habitación</a></li>
 
 					{$HOOK_PRODUCT_TAB}
 
@@ -262,7 +262,7 @@
 						<div id="room_info_tab_information">
 							<div class="info_margin_div room_description">
 								{$product->description}<br>
-								<strong>{l s="Room features -"}</strong>
+								<strong>{l s="Caracteristicas -"}</strong>
 								<br>
 								{foreach from=$features key=ftr_k item=ftr_v}
 									<b>{$ftr_v.name}</b>&nbsp;<img width="15px" src="{$ftr_img_src}{$ftr_v.value}"><br>
@@ -270,7 +270,7 @@
 							</div>
 							<div class="info_margin_div">
 								<div class="room_info_heading">
-									<span>{l s='Hotel Features'}</span>
+									<span>{l s='Caracteristicas del hotel'}</span>
 								</div>
 								<div class="room_info_content row">
 									{foreach from=$hotel_features key=ftr_k item=ftr_v}
@@ -286,7 +286,7 @@
 							</div> -->
 							<div class="info_margin_div">
 								<div class="room_info_heading">
-									<span>{l s='Hotel Policies'}</span>
+									<span>{l s='Politicas'}</span>
 								</div>
 								<div class="room_info_content">
 									<p class="">{$hotel_policies}</p>
@@ -311,7 +311,7 @@
 					<p class="booking_total_price">
                         <span class="product_original_price {if $feature_price_diff>0}room_type_old_price{/if}" {if $feature_price_diff < 0} style="display:none;"{/if}>{convertPrice price=$productPriceWithoutReduction|floatval}</span>
                         <span class="room_type_current_price" {if !$feature_price_diff}style="display:none;"{/if}>{convertPrice price = $feature_price|floatval}</span>
-                        /{l s='Night'}
+                        /{l s='Por noche'}
                     </p>
 					{*<p id="reduction_percent" {if $productPriceWithoutReduction <= 0 || !$product->specificPrice || $product->specificPrice.reduction_type != 'percentage'} style="display:none;"{/if}>{strip}
 						<span id="reduction_percent_display">
@@ -343,22 +343,22 @@
 				</div>
 				<div class="booking_room_fields">
 					<form action="" method="post">	
-						<div class="form-group">
+						<div class="form-group" style="display: none!important;">
 							<label for="" class="control-label">{l s='Hotel Location'}</label>
 						   	<input type="text" class="form-control" name="hotel_location" id="hotel_location" value="{$hotel_location}" readonly="true" />
 						</div>
 						<div class="form-group">
-							<label for="" class="control-label">{l s='Check In Date'}</label>
+							<label for="" class="control-label">{l s='Fecha de ingreso'}</label>
 						   	<input type="text" class="form-control" name="room_check_in" id="room_check_in" value="{if isset($date_from)}{$date_from|date_format:"%d-%m-%Y"}{/if}" autocomplete="off" readonly />
 						</div>
 						<div class="form-group">
-							<label for="" class="control-label">{l s='Check Out Date'}</label>
+							<label for="" class="control-label">{l s='Fecha de salida'}</label>
 						   	<input type="text" class="form-control" name="room_check_out" id="room_check_out" value="{if isset($date_to)}{$date_to|date_format:"%d-%m-%Y"}{/if}" autocomplete="off" readonly />
 						</div>
 						<div class="room_unavailability_date_error_div"></div>
 						<div class="form-group unvail_rooms_cond_display">
 							<div id="quantity_wanted_p"{if (!$allow_oosp && $product->quantity <= 0) || !$product->available_for_order || $PS_CATALOG_MODE} style="display: none;"{/if}>
-								<label for="quantity_wanted">{l s='No. of Rooms'}</label>
+								<label for="quantity_wanted">{l s='No. de habitaciones'}</label>
 
 								<a href="#" data-field-qty="qty" class="btn btn-default button-minus product_quantity_down">
 									<span>
@@ -377,7 +377,7 @@
 						</div>
 						<div class="room_unavailability_qty_error_div"></div>
 						<div class="form-group unvail_rooms_cond_display">
-							<label for="" class="control-label">{l s='Total Amount'}</label>
+							<label for="" class="control-label">{l s='Total'}</label>
 						   	<div class="total_price_block">
 						   		<p class="col-sm-5 text-center">
 						   			{convertPrice price=$total_price|floatval}
@@ -385,11 +385,10 @@
 						   	</div>
 						   	<div class="num_quantity_alert col-sm-7">
 								<p class="pull-right">
-									{l s='Hurry'}&nbsp;
 									<span class="num_searched_avail_rooms">
 										{$total_available_rooms}
 									</span>
-									&nbsp;{l s='Rooms Left!'}
+									&nbsp;{l s='Cuartos disponibles!'}
 								</p>
 							</div>
 						</div>
@@ -402,7 +401,7 @@
 							<p id="add_to_cart" class="buttons_bottom_block no-print">
 								<button type="submit" name="Submit" class="exclusive book_now_submit">
 									<span>
-										{if $content_only && (isset($product->customization_required) && $product->customization_required)}{l s='Customize'}{else}{l s='Book Now'}{/if}
+										{if $content_only && (isset($product->customization_required) && $product->customization_required)}{l s='Customize'}{else}{l s='Reservar'}{/if}
 									</span>
 							</button>
 							</p>

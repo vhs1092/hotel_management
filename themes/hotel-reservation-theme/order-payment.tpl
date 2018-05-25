@@ -34,7 +34,7 @@
 		{/if}
 	</h1>
 {else}
-	<h1 class="page-heading" id="choose_payment_txt">{l s='Payment methods'}</h1>
+	<!--h1 class="page-heading" id="choose_payment_txt">{l s='Payment methods'}</h1-->
 {/if}
 
 {if !$opc}

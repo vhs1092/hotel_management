@@ -124,23 +124,22 @@ class AdminAddressesControllerCore extends AdminController
                     'name' => 'id_customer',
                     'required' => false,
                 ),
-                array(
+                /*array(
                     'type' => 'text',
                     'label' => $this->l('Identification Number'),
                     'name' => 'dni',
                     'required' => false,
                     'col' => '4',
                     'hint' => $this->l('DNI / NIF / NIE')
-                ),
+                ),*/
                 array(
                     'type' => 'text',
-                    'label' => $this->l('Address alias'),
+                    'label' => $this->l('Alias para la información'),
                     'name' => 'alias',
-                    'required' => true,
                     'col' => '4',
                     'hint' => $this->l('Invalid characters:').' &lt;&gt;;=#{}'
                 ),
-                array(
+                /*array(
                     'type' => 'textarea',
                     'label' => $this->l('Other'),
                     'name' => 'other',
@@ -148,7 +147,7 @@ class AdminAddressesControllerCore extends AdminController
                     'cols' => 15,
                     'rows' => 3,
                     'hint' => $this->l('Forbidden characters:').' &lt;&gt;;=#{}'
-                ),
+                ),*/
                 array(
                     'type' => 'hidden',
                     'name' => 'id_order'
@@ -199,21 +198,21 @@ class AdminAddressesControllerCore extends AdminController
 
         foreach ($addresses_fields as $addr_field_item) {
             if ($addr_field_item == 'company') {
-                $temp_fields[] = array(
+                /*$temp_fields[] = array(
                     'type' => 'text',
                     'label' => $this->l('Company'),
                     'name' => 'company',
                     'required' => in_array('company', $required_fields),
                     'col' => '4',
                     'hint' => $this->l('Invalid characters:').' &lt;&gt;;=#{}'
-                );
-                $temp_fields[] = array(
+                );*/
+                /*$temp_fields[] = array(
                     'type' => 'text',
                     'label' => $this->l('VAT number'),
                     'col' => '2',
                     'name' => 'vat_number',
                     'required' => in_array('vat_number', $required_fields)
-                );
+                );*/
             } elseif ($addr_field_item == 'lastname') {
                 if (isset($customer) &&
                     !Tools::isSubmit('submit'.strtoupper($this->table)) &&
@@ -261,20 +260,19 @@ class AdminAddressesControllerCore extends AdminController
                     'required' => true,
                 );
             } elseif ($addr_field_item == 'address2') {
-                $temp_fields[] = array(
+                /*$temp_fields[] = array(
                     'type' => 'text',
                     'label' => $this->l('Address').' (2)',
                     'name' => 'address2',
                     'col' => '6',
                     'required' => in_array('address2', $required_fields),
-                );
+                );*/
             } elseif ($addr_field_item == 'postcode') {
                 $temp_fields[] = array(
                     'type' => 'text',
                     'label' => $this->l('Zip/Postal Code'),
                     'name' => 'postcode',
                     'col' => '2',
-                    'required' => true,
                 );
             } elseif ($addr_field_item == 'city') {
                 $temp_fields[] = array(

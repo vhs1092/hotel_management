@@ -2,20 +2,14 @@
 	<div class="row">
 		<section class="col-xs-12 col-sm-12">
 			<div class="row margin-lr-0 footer-section-heading">
-				<p>{l s='Explore' mod='wkfooterexploreblock'}</p>
+				<p>{l s='Dudas o preguntas?' mod='wkfooterexploreblock'}</p>
 				<hr/>
 			</div>
 			<div class="row margin-lr-0">
 				<ul class="footer-explore-section">
 					<li class="item">
-						<a title="{l s='Home' mod='wkfooterexploreblock'}" href="{if isset($force_ssl) && $force_ssl}{$base_dir_ssl}{else}{$base_dir}{/if}">
-							{l s='Home' mod='wkfooterexploreblock'}
-						</a>
-					</li>
-					{hook h="displayFooterExploreSectionHook"}
-					<li class="item">
 						<a title="{l s='Contact' mod='wkfooterexploreblock'}" href="{$link->getPageLink('contact', true)|escape:'html'}">
-							{l s='Contact' mod='wkfooterexploreblock'}
+							{l s='¡Contactanos!' mod='wkfooterexploreblock'}
 						</a>
 					</li>
 				</ul>

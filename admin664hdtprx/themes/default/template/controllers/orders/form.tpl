@@ -828,10 +828,10 @@
 				vouchers_html += '<tr><td>'+this.name+'</td><td>'+this.description+'</td><td>'+value+'</td><td class="text-right"><a href="#" class="btn btn-default delete_discount" rel="'+this.id_discount+'"><i class="icon-remove text-danger"></i>&nbsp;{l s='Delete'}</a></td></tr>';
 			});
 		$('#voucher_list tbody').html($.trim(vouchers_html));
-		if ($('#voucher_list tbody').html().length == 0)
+		/*if ($('#voucher_list tbody').html().length == 0)
 			$('#voucher_list').hide();
 		else
-			$('#voucher_list').show();
+			$('#voucher_list').show();*/
 	}
 
 	function updateCartPaymentList(payment_list)
@@ -1107,7 +1107,7 @@
 		});
 		if (addresses.length == 0)
 		{
-			$('#addresses_err').show().html('{l s='You must add at least one address to process the order.'}');
+			$('#addresses_err').show().html('{l s='Debes agregar la información del cliente para reservar.'}');
 			$('#address_delivery, #address_invoice').hide();
 
 			//by webkul (if there is no address then order can not be created)
@@ -1382,7 +1382,7 @@
 		</div>
 	</div>
 
-	<div class="panel" id="vouchers_part" style="display:none;">
+	<!--div class="panel" id="vouchers_part" style="display:none;">
 		<div class="panel-heading">
 			<i class="icon-ticket"></i>
 			{l s='Vouchers'}
@@ -1426,12 +1426,12 @@
 			</table>
 		</div>
 		<div id="vouchers_err" class="alert alert-warning" style="display:none;"></div>
-	</div>
+	</div-->
 
 	<div class="panel" id="address_part" style="">
 		<div class="panel-heading">
 			<i class="icon-envelope"></i>
-			{l s='Addresses'}
+			{l s='Información del cliente'}
 		</div>
 		<div id="addresses_err" class="alert alert-warning" style="display:none;"></div>
 
@@ -1439,13 +1439,13 @@
 			<div id="address_delivery" class="col-xs-6 col-sm-6">
 				<h4>
 					<i class="icon-map-marker"></i>
-					{l s='Customer Address'}
+					{l s='Información del cliente'}
 				</h4>
 				<div class="row-margin-bottom">
 					<select id="id_address_delivery" name="id_address_delivery"></select>
 				</div>
 				<div class="well">
-					<a href="" id="edit_delivery_address" class="btn btn-default pull-right fancybox"><i class="icon-pencil"></i> {l s='Edit'}</a>
+					<a href="" id="edit_delivery_address" class="btn btn-default pull-right fancybox"><i class="icon-pencil"></i> {l s='Editar'}</a>
 					<div id="address_delivery_detail"></div>
 				</div>
 			</div>
@@ -1463,11 +1463,11 @@
 				</div>
 			</div>
 		</div>
-		<div class="row">
+		<div class="row" >
 			<div class="col-lg-12">
 				<a class="fancybox btn btn-default" id="new_address" href="{$link->getAdminLink('AdminAddresses')|escape:'html':'UTF-8'}&amp;addaddress&amp;id_customer=42&amp;liteDisplaying=1&amp;submitFormAjax=1#">
 					<i class="icon-plus-sign-alt"></i>
-					{l s='Add a new address'}
+					{l s='Agregar información'}
 				</a>
 			</div>
 		</div>
@@ -1562,7 +1562,7 @@
 				</div>
 				<div class="col-lg-2">
 					<div class="data-focus">
-						<span>{l s='Total vouchers (Tax excl.)'}</span><br/>
+						<span>{l s='Total descuentos (Tax excl.)'}</span><br/>
 						<span id="total_vouchers" class="size_l text-danger"></span>
 					</div>
 				</div>
@@ -1601,7 +1601,7 @@
 						<textarea name="order_message" id="order_message" rows="3" cols="45"></textarea>
 					</div>
 				</div>
-				<div class="form-group">
+				<!--div class="form-group">
 					{if !$PS_CATALOG_MODE}
 					<div class="col-lg-9 col-lg-offset-3">
 						<a href="javascript:void(0);" id="send_email_to_customer" class="btn btn-default">
@@ -1614,13 +1614,14 @@
 						</a>
 					</div>
 					{/if}
-				</div>
+				</div-->
 				<div class="form-group">
 					<label class="control-label col-lg-3">{l s='Payment'}</label>
 					<div class="col-lg-9">
 						<select name="payment_module_name" id="payment_module_name">
 							{if !$PS_CATALOG_MODE}
 							{foreach from=$payment_modules item='module'}
+							{$module->name}
 								<option value="{$module->name}" {if isset($smarty.post.payment_module_name) && $module->name == $smarty.post.payment_module_name}selected="selected"{/if}>{$module->displayName}</option>
 							{/foreach}
 							{else}
@@ -1643,7 +1644,7 @@
 					<div class="col-lg-9 col-lg-offset-3">
 						<button type="submit" name="submitAddOrder" class="btn btn-default" />
 							<i class="icon-check"></i>
-							{l s='Create the order'}
+							{l s='Crear reservación'}
 						</button>
 					</div>
 				</div>

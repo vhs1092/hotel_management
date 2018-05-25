@@ -25,38 +25,35 @@
 
 {capture name=path}
     <a href="{$link->getPageLink('my-account', true)|escape:'html':'UTF-8'}">
-        {l s='My account'}
+        {l s='Mi cuenta'}
     </a>
     <span class="navigation-pipe">
         {$navigationPipe}
     </span>
     <span class="navigation_page">
-        {l s='Your personal information'}
+        {l s='Configuración de tu cuenta'}
     </span>
 {/capture}
 <div class="box">
     <h1 class="page-subheading">
-        {l s='Your personal information'}
+        {l s='Configuración de tu cuenta'}
     </h1>
 
     {include file="$tpl_dir./errors.tpl"}
 
     {if isset($confirmation) && $confirmation}
         <p class="alert alert-success">
-            {l s='Your personal information has been successfully updated.'}
+            {l s='Información actualizada.'}
             {if isset($pwd_changed)}<br />{l s='Your password has been sent to your email:'} {$email}{/if}
         </p>
     {else}
-        <p class="info-title">
-            {l s='Please be sure to update your personal information if it has changed.'}
-        </p>
         <p class="required">
             <sup>*</sup>{l s='Required field'}
         </p>
         <form action="{$link->getPageLink('identity', true)|escape:'html':'UTF-8'}" method="post" class="std">
             <fieldset>
                 <div class="clearfix">
-                    <label>{l s='Social title'}</label>
+                    <label>{l s='Trato'}</label>
                     <br />
                     {foreach from=$genders key=k item=gender}
                         <div class="radio-inline">
@@ -68,25 +65,25 @@
                 </div>
                 <div class="required form-group">
                     <label for="firstname" class="required">
-                        {l s='First name'}
+                        {l s='Nombre'}
                     </label>
                     <input class="is_required validate form-control" data-validate="isName" type="text" id="firstname" name="firstname" value="{$smarty.post.firstname}" />
                 </div>
                 <div class="required form-group">
                     <label for="lastname" class="required">
-                        {l s='Last name'}
+                        {l s='Apellido'}
                     </label>
                     <input class="is_required validate form-control" data-validate="isName" type="text" name="lastname" id="lastname" value="{$smarty.post.lastname}" />
                 </div>
                 <div class="required form-group">
                     <label for="email" class="required">
-                        {l s='E-mail address'}
+                        {l s='E-mail'}
                     </label>
                     <input class="is_required validate form-control" data-validate="isEmail" type="email" name="email" id="email" value="{$smarty.post.email}" />
                 </div>
                 <div class="form-group">
                     <label>
-                        {l s='Date of Birth'}
+                        {l s='Fecha de nacimiento'}
                     </label>
                     <div class="row">
                         <div class="col-xs-4">
@@ -99,18 +96,18 @@
                         </div>
                         <div class="col-xs-4">
 							{*
-								{l s='January'}
-								{l s='February'}
-								{l s='March'}
-								{l s='April'}
-								{l s='May'}
-								{l s='June'}
-								{l s='July'}
-								{l s='August'}
-								{l s='September'}
-								{l s='October'}
-								{l s='November'}
-								{l s='December'}
+								{l s='Enero'}
+								{l s='Febrero'}
+								{l s='Marzo'}
+								{l s='Abril'}
+								{l s='Mayo'}
+								{l s='Junio'}
+								{l s='Julio'}
+								{l s='Agosto'}
+								{l s='Septiembre'}
+								{l s='Octubre'}
+								{l s='Noviembre'}
+								{l s='Diciembre'}
 							*}
                             <select id="months" name="months" class="form-control">
                                 <option value="">-</option>
@@ -131,19 +128,19 @@
                 </div>
                 <div class="required form-group">
                     <label for="old_passwd" class="required">
-                        {l s='Current Password'}
+                        {l s='Contraseña actual'}
                     </label>
                     <input class="is_required validate form-control" type="password" data-validate="isPasswd" name="old_passwd" id="old_passwd" />
                 </div>
                 <div class="password form-group">
                     <label for="passwd">
-                        {l s='New Password'}
+                        {l s='Nueva contraseña'}
                     </label>
                     <input class="is_required validate form-control" type="password" data-validate="isPasswd" name="passwd" id="passwd" />
                 </div>
                 <div class="password form-group">
                     <label for="confirmation">
-                        {l s='Confirmation'}
+                        {l s='Confirmar contraseña'}
                     </label>
                     <input class="is_required validate form-control" type="password" data-validate="isPasswd" name="confirmation" id="confirmation" />
                 </div>
@@ -151,7 +148,7 @@
                     <div class="checkbox">
                         <label for="newsletter">
                             <input type="checkbox" id="newsletter" name="newsletter" value="1" {if isset($smarty.post.newsletter) && $smarty.post.newsletter == 1} checked="checked"{/if}/>
-                            {l s='Sign up for our newsletter!'}
+                            {l s='Subcripción!'}
                             {if isset($required_fields) && array_key_exists('newsletter', $field_required)}
                               <sup> *</sup>
                             {/if}
@@ -195,7 +192,7 @@
 		{/if}
                 <div class="form-group">
                     <button type="submit" name="submitIdentity" class="btn btn-default button button-medium">
-                        <span>{l s='Save'}<i class="icon-chevron-right right"></i></span>
+                        <span>{l s='Guardar'}<i class="icon-chevron-right right"></i></span>
                     </button>
                 </div>
             </fieldset>
@@ -206,14 +203,14 @@
 	<li>
         <a class="btn btn-default button button-small" href="{$link->getPageLink('my-account', true)}">
             <span>
-                <i class="icon-chevron-left"></i>{l s='Back to your account'}
+                <i class="icon-chevron-left"></i>{l s='Regresar a mi cuenta'}
             </span>
         </a>
     </li>
 	<li>
         <a class="btn btn-default button button-small" href="{$base_dir}">
             <span>
-                <i class="icon-chevron-left"></i>{l s='Home'}
+                <i class="icon-chevron-left"></i>{l s='Inicio'}
             </span>
         </a>
     </li>

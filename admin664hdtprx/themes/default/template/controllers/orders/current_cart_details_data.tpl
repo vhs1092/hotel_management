@@ -8,13 +8,13 @@
 				<table class="table" id="customer_cart_details_table">
 					<thead>
 						<tr>
-							<th><span class="title_box">{l s='Room No.'}</span></th>
-							<th><span class="title_box">{l s='Room Image'}</th>
-							<th><span class="title_box">{l s='Room Type'}</span></th>
-							<th><span class="title_box">{l s='Duration'}</span></th>
-							<th><span class="title_box">{l s='Unit Price'}</span></th>
-							<th><span class="title_box">{l s='Price'}</span></th>
-							<th><span class="title_box">{l s='Action'}</span></th>
+							<th><span class="title_box">{l s='Habitación No.'}</span></th>
+							<th><span class="title_box">{l s='Imagen'}</th>
+							<th><span class="title_box">{l s='Tipo de habitación'}</span></th>
+							<th><span class="title_box">{l s='Duración'}</span></th>
+							<th><span class="title_box">{l s='Precio por habitación'}</span></th>
+							<th><span class="title_box">{l s='Total'}</span></th>
+							<th><span class="title_box">{l s='Acción'}</span></th>
 						</tr>
 					</thead>
 					<tbody>

@@ -25,4 +25,4 @@
 
 <!-- <h3 id="#idTab5" class="idTabHrefShort page-product-heading">{l s='Reviews' mod='productcomments'}</h3> 
 <h3 id="#idTab6" class="idTabHrefShort page-product-heading">{l s='Comments' mod='productcomments'}</h3>  -->
-<li><a href="#idTab5" class="idTabHrefShort" data-toggle="tab">{l s='Reviews' mod='productcomments'}</a></li>
+<li><a href="#idTab5" class="idTabHrefShort" data-toggle="tab">{l s='Comentarios' mod='productcomments'}</a></li>

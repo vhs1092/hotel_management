@@ -847,7 +847,7 @@ class Blocknewsletter extends Module
 	public function renderExportForm()
 	{
 		$fields_form = array(
-			'form' => array(
+			/*'form' => array(
 				'legend' => array(
 					'title' => $this->l('Export Newsletter Subscribers'),
 					'icon' => 'icon-envelope'
@@ -860,7 +860,7 @@ class Blocknewsletter extends Module
 					'class' => 'btn btn-default pull-right',
 					'name' => 'submitExportmodule',
 					)
-				),
+				),*/
 			);
 
 			$helper = new HelperForm();

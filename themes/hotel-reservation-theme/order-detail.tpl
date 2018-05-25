@@ -33,12 +33,12 @@
 	</form>
 	{/if}
 	<p class="dark">
-		<strong>{l s='Order Reference %s - placed on' sprintf=$order->getUniqReference()} {dateFormat date=$order->date_add full=0}</strong>
+		<strong>{l s='Código de reservación %s - reservado en' sprintf=$order->getUniqReference()} {dateFormat date=$order->date_add full=0}</strong>
 	</p>
 </div>
 <div class="info-order box">
 	{if $carrier->id}<p><strong class="dark">{l s='Carrier'}</strong> {if $carrier->name == "0"}{$shop_name|escape:'html':'UTF-8'}{else}{$carrier->name|escape:'html':'UTF-8'}{/if}</p>{/if}
-	<p><strong class="dark">{l s='Payment method'}</strong> <span class="color-myaccount">{$order->payment|escape:'html':'UTF-8'}</span></p>
+	<p><strong class="dark">{l s='Metodo de pago'}</strong> <span class="color-myaccount">{$order->payment|escape:'html':'UTF-8'}</span></p>
 	{if $invoice AND $invoiceAllowed}
 	<p>
 		<i class="icon-file-text"></i>
@@ -55,13 +55,13 @@
 </div>
 
 {if count($order_history)}
-<h1 class="page-heading">{l s='Follow your order\'s status step-by-step'}</h1>
+<h1 class="page-heading">{l s='Dale seguimiento a tu reservación'}</h1>
 <div class="table_block">
 	<table class="detail_step_by_step table table-bordered">
 		<thead>
 			<tr>
-				<th class="first_item">{l s='Date'}</th>
-				<th class="last_item">{l s='Status'}</th>
+				<th class="first_item">{l s='Fecha'}</th>
+				<th class="last_item">{l s='Estado'}</th>
 			</tr>
 		</thead>
 		<tbody>
@@ -99,7 +99,7 @@
 		</div> *}<!-- By webkul to hide delivery address of the product -->
 		<div class="col-xs-12 col-sm-12">
 			<ul class="address item {if $order->isVirtual()}full_width{/if} box">
-				<li><h3 class="page-subheading">{l s='Customer address'} ({$address_invoice->alias})</h3></li>
+				<li><h3 class="page-subheading">{l s='Información del cliente'}</h3></li>
 				{foreach from=$inv_adr_fields name=inv_loop item=field_item}
 					{if $field_item eq "company" && isset($address_invoice->company)}<li class="address_company">{$address_invoice->company|escape:'html':'UTF-8'}</li>
 					{elseif $field_item eq "address2" && $address_invoice->address2}<li class="address_address2">{$address_invoice->address2|escape:'html':'UTF-8'}</li>
@@ -137,20 +137,20 @@
 				<th class="item">{l s='Unit price'}</th>
 				<th class="last_item">{l s='Total price'}</th> *}
 
-				<th class="cart_product">{l s='Room Image'}</th>
-				<th class="cart_description">{l s='Room Description'}</th>
+				<th class="cart_product">{l s='Imagen'}</th>
+				<th class="cart_description">{l s='Descripción'}</th>
 				<th>{l s='Room Capcity'}</th>
-				<th class="cart_unit">{l s='Unit Price'}</th>
-				<th>{l s='Rooms'}</th>
-				<th>{l s='Check-in Date'}</th>
-				<th>{l s='Check-out Date'}</th>
+				<th class="cart_unit">{l s='Precio'}</th>
+				<th>{l s='Habitaciones'}</th>
+				<th>{l s='Fecha de ingreso'}</th>
+				<th>{l s='Fecha de salida'}</th>
 				<th class="cart_total">{l s='Total'}</th>
 				{if isset($order_has_invoice) && $order_has_invoice  && $order->payment != 'Free order'}
 					<th>{l s='Request Refund'}</th>
 					<th>{l s='Refund Stage'}</th>
 					<th>{l s='Refund Status'}</th>
 				{/if}
-				<th>{l s='Back-Order Status'}</th>
+				<th></th>
 			</tr>
 		</thead>
 		<tfoot>
@@ -158,7 +158,7 @@
 				<tr class="item">
 					<td colspan={if isset($order_has_invoice) && $order_has_invoice  && $order->payment != 'Free order'}"8"{else}"5"{/if}></td>
 					<td colspan="{if $return_allowed}3{else}3{/if}">
-						<strong>{l s='Items (tax excl.)'}</strong>
+						<strong>{l s='Subtotal (IVA excl.)'}</strong>
 					</td>
 					<td colspan="{if $order->hasProductReturned()}5{else}1{/if}" class="text-right">
 						<span class="price">{displayWtPriceWithCurrency price=$order->getTotalProductsWithoutTaxes() currency=$currency}</span>
@@ -168,7 +168,7 @@
 			<tr class="item">
 				<td colspan={if isset($order_has_invoice) && $order_has_invoice  && $order->payment != 'Free order'}"8"{else}"5"{/if}></td>
 				<td colspan="{if $return_allowed}2{else}3{/if}">
-					<strong>{l s='Items'} {if $use_tax}{l s='(tax incl.)'}{/if} </strong>
+					<strong>{l s='Subtotal'} {if $use_tax}{l s='(IVA incl.)'}{/if} </strong>
 				</td>
 				<td colspan="{if $order->hasProductReturned()}5{else}1{/if}" class="text-right">
 					<span class="price">{displayWtPriceWithCurrency price=$order->getTotalProductsWithTaxes() currency=$currency}</span>
@@ -609,16 +609,16 @@
 	{/if}
 	{if isset($message_confirmation) && $message_confirmation}
 	<p class="alert alert-success">
-		{l s='Message successfully sent'}
+		{l s='Mensaje enviado'}
 	</p>
 	{/if}
 	<form action="{$link->getPageLink('order-detail', true)|escape:'html':'UTF-8'}" method="post" class="std" id="sendOrderMessage">
-		<h3 class="page-heading bottom-indent">{l s='Add a message'}</h3>
-		<p>{l s='If you would like to add a comment about your order, please write it in the field below.'}</p>
+		<h3 class="page-heading bottom-indent">{l s='Envia un mensaje'}</h3>
+		<p>{l s='Escribe abajo si deseas agregar un comentario de tu reservación.'}</p>
 		<p class="form-group">
-		<label for="id_product">{l s='Product'}</label>
+		<label for="id_product">{l s='Habitación'}</label>
 			<select name="id_product" class="form-control">
-				<option value="0">{l s='-- Choose --'}</option>
+				<option value="0">{l s='-- Seleccionar --'}</option>
 				{foreach from=$products item=product name=products}
 					<option value="{$product.product_id}">{$product.product_name}</option>
 				{/foreach}
@@ -630,7 +630,7 @@
 		<div class="submit">
 			<input type="hidden" name="id_order" value="{$order->id|intval}" />
 			<input type="submit" class="unvisible" name="submitMessage" value="{l s='Send'}"/>
-			<button type="submit" name="submitMessage" class="button btn btn-default button-medium"><span>{l s='Send'}<i class="icon-chevron-right right"></i></span></button>
+			<button type="submit" name="submitMessage" class="button btn btn-default button-medium"><span>{l s='Enviar'}<i class="icon-chevron-right right"></i></span></button>
 		</div>
 	</form>
 {else}

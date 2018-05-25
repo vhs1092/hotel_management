@@ -241,7 +241,7 @@ $(document).ready(function()
 												html += '<span class="pull-left rm_price_val">';
 													html += currency_prefix+value.feature_price.toFixed(2)+currency_suffix;
 												html += '</span>';
-												html += '<span class="pull-left rm_price_txt">/Per Night</span>';
+												html += '<span class="pull-left rm_price_txt">/Por noche</span>';
 				                            html += '</div>';
 
 				                            // html += ' <a cat_rm_check_in="'+date_from+'" cat_rm_check_out="'+date_to+'" href="" rm_product_id="'+value.id_product+'" cat_rm_book_nm_days="'+num_days+'" class="btn rm_book_btn pull-right">Book Now</a>';

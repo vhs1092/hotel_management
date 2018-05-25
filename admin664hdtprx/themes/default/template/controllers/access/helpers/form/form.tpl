@@ -251,6 +251,31 @@
 									</tr>
 								{else}
 									{foreach $tabs AS $tab}
+									{if $tab.name != 'Páginas estáticas/CMS'
+									&& $tab.name != 'Categorías CMS'
+									&& $tab.name != 'Buscar'
+									&& $tab.name != 'Tiendas'
+									&& $tab.name != 'URLs/Direcciones de la tienda'
+									&& $tab.name != 'order restrict'
+									&& $tab.name != 'configuration'
+									&& $tab.name != 'order restrict configuration'
+									&& $tab.name != 'Configuración general'
+									&& $tab.name != 'other hotel configuration'
+									&& $tab.name != 'payments configuration'
+									&& $tab.name != 'feature pricing configuration'
+									&& $tab.name != 'Manage Hotel Rooms Display'
+									&& $tab.name != 'Dashgoals'
+									&& $tab.name != 'Etiquetas'
+									&& $tab.name != 'Etiquetas'
+									&& $tab.name != 'Reglas de Descuentos'
+									&& $tab.name != 'Módulos y Servicios'
+									&& $tab.name != 'Localización'
+									&& $tab.name != 'Preferencias'
+									&& $tab.name != 'Parámetros Avanzados'
+									&& $tab.name != 'Estadísticas'
+									&& $tab.name != 'Existencias'
+									
+									}
 										{assign var=access value=$accesses[$profile.id_profile]}
 										{if !$tab.id_parent OR $tab.id_parent == -1}
 											{assign var=is_child value=false}
@@ -274,6 +299,23 @@
 												</td>
 											</tr>
 											{foreach $tabs AS $child}
+											{if $child.name != 'Categorías'
+   										     && $child.name != 'Facturas'
+   										     && $child.name != 'Devoluciones de mercancía'
+   										     && $child.name != 'Factura de abonos'
+   										     && $child.name != 'Estados'
+   										     && $child.name != 'Grupos'
+   										     && $child.name != 'Carritos de compra'
+   										     && $child.name != 'Datos'
+   										     && $child.name != 'Tratamientos'
+   										     && $child.name != 'Cuentas por pagar'
+   										     && $child.name != 'Manage Hotel'
+   										     && $child.name != 'Manage Order Refund Rules'
+   										     && $child.name != 'Manage Order Refund Requests'
+   										     && $child.name != 'Acceso rápido'
+   										     && $child.name != 'Menús'
+											}
+
 												{if $child.id_parent === $tab.id_tab}
 													{if isset($access[$child.id_tab])}
 														{assign var=is_child value=true}
@@ -298,17 +340,18 @@
 														</tr>
 													{/if}
 												{/if}
+												{/if}
 											{/foreach}
 
 										{/if}
-
+										{/if}
 									{/foreach}
 								{/if}
 							</tbody>
 						</table>
 					</div>
 				</div>
-				<div class="col-lg-6">
+				<div class="col-lg-6" style="display: none;">
 					<div class="panel">
 						<h3>{l s='Modules'}</h3>
 						<table class="table" id="table_module_{$profile.id_profile}">

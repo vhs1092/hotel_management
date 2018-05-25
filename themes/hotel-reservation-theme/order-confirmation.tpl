@@ -23,9 +23,9 @@
 *  International Registered Trademark & Property of PrestaShop SA
 *}
 
-{capture name=path}{l s='Order confirmation'}{/capture}
+{capture name=path}{l s='Reservación completada'}{/capture}
 
-<h1 class="page-heading">{l s='Order confirmation'}</h1>
+<h1 class="page-heading">{l s='Reservación completada'}</h1>
 
 {assign var='current_step' value='payment'}
 {include file="$tpl_dir./order-steps.tpl"}
@@ -43,8 +43,8 @@
 			<a class="button-exclusive btn btn-default" href="{$link->getPageLink('guest-tracking', true, NULL, "id_order={$reference_order|urlencode}&email={$email|urlencode}")|escape:'html':'UTF-8'}" title="{l s='Follow my order'}"><i class="icon-chevron-left"></i>{l s='Follow my order'}</a>
 		    </p>
 		{else}
-			<p><strong>{l s='Order Status :'}</strong> <span>{l s='Confirmed'}</span></p>
-			<p><strong>{l s='Order Reference :'}</strong> <span class="bold">{$order->reference}</span></p>
+			<p><strong>{l s='Estado de reservación :'}</strong> <span>{l s='Confirmada'}</span></p>
+			<p><strong>{l s='Código de reservación :'}</strong> <span class="bold">{$order->reference}</span></p>
 			{if $any_back_order}
 				{if $shw_bo_msg}
 					<br>
@@ -55,7 +55,7 @@
 				{/if}
 			{/if}
 			<hr>
-			<p><strong>{l s='Order Details -'}</strong></p>
+			<p><strong>{l s='Detalles de reservación -'}</strong></p>
 			{*{if isset($orders_has_invoice) && $orders_has_invoice && $order->payment != 'Free order'}
 				<div class="row totalOrdercancellation_div" {if !$non_requested_rooms}style="display:none;"{/if}>
 					<div class="col-xs-12 col-sm-12">
@@ -68,17 +68,17 @@
 				<table class="table table-bordered">
 					<thead>
 						<tr>
-							<th class="cart_product">{l s='Room Image'}</th>
-							<th class="cart_description">{l s='Room Description'}</th>
-							<th class="cart_unit">{l s='Unit Price'}</th>
-							<th>{l s='Rooms'}</th>
-							<th>{l s='Check-in Date'}</th>
-							<th>{l s='Check-out Date'}</th>
+							<th class="cart_product">{l s='Imagen'}</th>
+							<th class="cart_description">{l s='Descripción'}</th>
+							<th class="cart_unit">{l s='Precio'}</th>
+							<th>{l s='Habitaciones'}</th>
+							<th>{l s='Fecha de ingreso'}</th>
+							<th>{l s='Fecha de salida'}</th>
 							<th class="cart_total">{l s='Total'}</th>
 							{*{if isset($orders_has_invoice) && $orders_has_invoice}
 								<th>{l s='Request Refund'}</th>
 							{/if}*}	
-							<th>{l s='BackOrder Status'}</th>
+							<th></th>
 						</tr>
 					</thead>
 					<tbody>
@@ -174,7 +174,7 @@
 							<tr class="item">
 								<td colspan={if isset($orders_has_invoice) && $orders_has_invoice}"7"{else}"6"{/if}></td>
 								<td colspan="{if $return_allowed}2{else}1{/if}">
-									<strong>{l s='Items (tax excl.)'}</strong>
+									<strong>{l s='subtotal (IVA excl.)'}</strong>
 								</td>
 								<td colspan="{if $order->hasProductReturned()}3{else}2{/if}">
 									<span class="price">{displayWtPriceWithCurrency price=$orderTotalInfo['total_products_te'] currency=$currency}</span>
@@ -184,7 +184,7 @@
 						<tr class="item">
 							<td colspan={if isset($orders_has_invoice) && $orders_has_invoice}"7"{else}"6"{/if}></td>
 							<td colspan="{if $return_allowed}2{else}1{/if}">
-								<strong>{l s='Items'} {if $use_tax}{l s='(tax incl.)'}{/if} </strong>
+								<strong>{l s='subtotal'} {if $use_tax}{l s='(IVA incl.)'}{/if} </strong>
 							</td>
 							<td colspan="{if $order->hasProductReturned()}3{else}2{/if}">
 								<span class="price">{displayWtPriceWithCurrency price=$orderTotalInfo['total_products_ti'] currency=$currency}</span>
@@ -244,14 +244,13 @@
 					</tfoot>
 				</table>
 			</div>
-			<p>{l s='An email has been sent with this information.' mod='bankwire'}
-				<br /><strong>{l s='Your order will be sent as soon as we receive payment.' mod='bankwire'}</strong>
-				<br />{l s='If you have questions, comments or concerns, please contact our' mod='bankwire'} <a class="cust_serv_lnk" href="{$link->getPageLink('contact', true)|escape:'html'}">{l s='expert customer support team' mod='bankwire'}</a>
+			<p>{l s='Se ha enviado un correo con esta información.' mod='bankwire'}
+				<br />{l s='Si tiene alguna pregunta o comentario por favor ' mod='bankwire'} <a class="cust_serv_lnk" href="{$link->getPageLink('contact', true)|escape:'html'}">{l s='contactenos' mod='bankwire'}</a>
 			</p>
 		</div>
 	{/if}
 	<p class="cart_navigation exclusive">
-		<a class="btn htl-reservation-form-btn-small" href="{$link->getPageLink('history', true)|escape:'html':'UTF-8'}" title="{l s='Go to your order history page'}"><i class="icon-chevron-left"></i>{l s='View your order history'}</a>
+		<a class="btn htl-reservation-form-btn-small" href="{$link->getPageLink('history', true)|escape:'html':'UTF-8'}" title="{l s='Go to your order history page'}"><i class="icon-chevron-left"></i>{l s='Ver mi historial de reservaciones'}</a>
 	</p>
 {/if}
 

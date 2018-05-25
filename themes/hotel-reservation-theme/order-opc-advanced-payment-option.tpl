@@ -1,5 +1,5 @@
 {if isset($advance_payment_active)}
-	<div class="opc-main-block">
+	<div class="opc-main-block" style="display: none!important;">
 		<div class="row margin-lr-0">
 			<div class="col-sm-12 col-xs-12 box">
 				<h3 class="page-subheading">{l s='Payment Types'}</h3>

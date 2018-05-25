@@ -1209,7 +1209,7 @@
 											{assign var=order_shipping_price value=$order->total_shipping_tax_incl}
 										{/if}
 										<tr id="total_products">
-											<td class="text-right"><strong>{l s='Precio de habitaci{on'}</strong></td>
+											<td class="text-right"><strong>{l s='Precio de habitación'}</strong></td>
 											<td class="amount text-right nowrap">
 												<strong>{displayPrice price=$totalRoomsCostTE currency=$currency->id}</strong>
 											</td>

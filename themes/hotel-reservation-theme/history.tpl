@@ -40,12 +40,12 @@
 		<table id="order-list" class="table table-bordered footab">
 			<thead>
 				<tr>
-					<th class="first_item" data-sort-ignore="true">{l s='Order reference'}</th>
-					<th class="item">{l s='Date'}</th>
-					<th data-hide="phone" class="item">{l s='Total price'}</th>
-					<th data-sort-ignore="true" data-hide="phone,tablet" class="item">{l s='Payment'}</th>
-					<th class="item">{l s='Status'}</th>
-					<th data-sort-ignore="true" data-hide="phone,tablet" class="item">{l s='Invoice'}</th>
+					<th class="first_item" data-sort-ignore="true">{l s='Código de reservación'}</th>
+					<th class="item">{l s='Fecha'}</th>
+					<th data-hide="phone" class="item">{l s='Precio total'}</th>
+					<th data-sort-ignore="true" data-hide="phone,tablet" class="item">{l s='Tipo de pago'}</th>
+					<th class="item">{l s='Estado'}</th>
+					<th data-sort-ignore="true" data-hide="phone,tablet" class="item">{l s='Factura'}</th>
 					<th data-sort-ignore="true" data-hide="phone,tablet" class="last_item">&nbsp;</th>
 				</tr>
 			</thead>
@@ -98,20 +98,20 @@
 		</table>
 		<div id="block-order-detail" class="unvisible">&nbsp;</div>
 	{else}
-		<p class="alert alert-warning">{l s='You have not placed any orders.'}</p>
+		<p class="alert alert-warning">{l s='No tienes ninguna reservacion.'}</p>
 	{/if}
 </div>
 <ul class="footer_links clearfix">
 	<li>
 		<a class="btn btn-default button button-small" href="{$link->getPageLink('my-account', true)|escape:'html':'UTF-8'}">
 			<span>
-				<i class="icon-chevron-left"></i> {l s='Back to Your Account'}
+				<i class="icon-chevron-left"></i> {l s='Regresar a mi cuenta'}
 			</span>
 		</a>
 	</li>
 	<li>
 		<a class="btn btn-default button button-small" href="{$base_dir}">
-			<span><i class="icon-chevron-left"></i> {l s='Home'}</span>
+			<span><i class="icon-chevron-left"></i> {l s='Inicio'}</span>
 		</a>
 	</li>
 </ul>

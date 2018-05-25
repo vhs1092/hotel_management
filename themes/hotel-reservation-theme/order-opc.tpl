@@ -60,14 +60,14 @@
 		<!-- END Payment -->
 	{else}
 		{capture name=path}{l s='Your shopping cart'}{/capture}
-		<h2 class="page-heading">{l s='Your shopping cart'}</h2>
+		<h2 class="page-heading">{l s='Tus reservaciones'}</h2>
 		{include file="$tpl_dir./errors.tpl"}
 
 		{if isset($cartChanged) && $cartChanged}
-			<p class="alert alert-danger">{l s='Your booking cart has been changed automatically as some rooms in your booking cart has been booked by another customer.'}</p>
+			<p class="alert alert-danger">{l s='Su carrito de reserva ha sido cambiado automáticamente ya que algunas habitaciones en su carrito de reserva han sido reservadas por otro cliente'}</p>
 		{/if}
 
-		<p class="alert alert-warning">{l s='Till now you did not enter any room in your cart.'}</p>
+		<p class="alert alert-warning">{l s='No has agregado ninguna habitación.'}</p>
 	{/if}
 {strip}
 {addJsDef imgDir=$img_dir}

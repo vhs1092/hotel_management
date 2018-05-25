@@ -28,14 +28,14 @@
                                                 {if $roomDisplay.feature_price_diff}
                                                     <span class="wk_roomType_price">{convertPrice price = $roomDisplay.feature_price}</span>
                                                 {/if}
-                                                /&nbsp;{l s='Per Night' mod='wkhotelroom'}
+                                                /&nbsp;{l s='Por noche' mod='wkhotelroom'}
                                             </p>
                                         </div>
                                         <div class="row margin-lr-0 htlRoomTypeDescText">
                                             {$roomDisplay.description}
                                         </div>
                                         <div class="row margin-lr-0">
-                                            <a target="blank" class="btn btn-default button htlRoomTypeBookNow" href="{$link->getProductLink($roomDisplay.id_product)|escape:'html':'UTF-8'}"><span>{l s='Reservar' mod='wkhotelroom'}</span></a>
+                                            <a class="btn btn-default button htlRoomTypeBookNow" href="{$link->getProductLink($roomDisplay.id_product)|escape:'html':'UTF-8'}"><span>{l s='Reservar' mod='wkhotelroom'}</span></a>
                                         </div>
                                     </div>
                                 </div>

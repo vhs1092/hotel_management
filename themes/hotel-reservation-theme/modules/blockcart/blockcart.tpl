@@ -110,9 +110,9 @@
 												<table class="table">
 													<tbody>
 														<tr>
-															<th>{l s='Duration' mod='blockcart'}</th>
-															<th>{l s='Qty.' mod='blockcart'}</th>
-															<th>{l s='Price' mod='blockcart'}</th>
+															<th>{l s='Duración' mod='blockcart'}</th>
+															<th>{l s='Cantidad.' mod='blockcart'}</th>
+															<th>{l s='Precio' mod='blockcart'}</th>
 															<th>&nbsp;<!-- {l s='Remove' mod='blockcart'} --></th>
 														</tr>
 														{foreach from=$cart_htl_data[$data_k]['date_diff'] key=data_k1 item=data_v}
@@ -253,7 +253,7 @@
 			<div class="layer_cart_product col-xs-12 col-md-6">
 				<span class="cross" title="{l s='Close window' mod='blockcart'}"></span>
 				<h2>
-					<i class="icon-check"></i>{l s='Room successfully added to your cart' mod='blockcart'}
+					<i class="icon-check"></i>{l s='La habitación ha sido agregada' mod='blockcart'}
 				</h2>
 				<div class="product-image-container layer_cart_img">
 				</div>
@@ -261,16 +261,12 @@
 					<span id="layer_cart_product_title" class="product-name"></span>
 					<span id="layer_cart_product_attributes"></span>
 					<div>
-						<strong class="dark">{l s='Time Duration' mod='blockcart'} &nbsp;-&nbsp;</strong>
+						<strong class="dark">{l s='Duración' mod='blockcart'} &nbsp;-&nbsp;</strong>
 						<span id="layer_cart_product_time_duration"></span>
 					</div>
 					<div>
-						<strong class="dark">{l s='Rooms Quantity Added' mod='blockcart'} &nbsp;-&nbsp;</strong>
+						<strong class="dark">{l s='Habitaciones agregadas' mod='blockcart'} &nbsp;-&nbsp;</strong>
 						<span id="layer_cart_product_quantity"></span>
-					</div>
-					<div>
-						<strong class="dark">{l s='Total Cart Cost of This Room Type' mod='blockcart'} &nbsp;-&nbsp;</strong>
-						<span id="layer_cart_product_price"></span>
 					</div>
 				</div>
 			</div>
@@ -278,18 +274,18 @@
 				<h2>
 					<!-- Plural Case [both cases are needed because page may be updated in Javascript] -->
 					<span class="ajax_cart_product_txt_s {if $cart_qties < 2} unvisible{/if}">
-						{l s='There are [1]%d[/1] room(s) in your cart.' mod='blockcart' sprintf=[$cart_qties] tags=['<span class="ajax_cart_quantity">']}
+						{l s='hay [1]%d[/1] habitaciones agregadas.' mod='blockcart' sprintf=[$cart_qties] tags=['<span class="ajax_cart_quantity">']}
 					</span>
 
 					<!-- Singular Case [both cases are needed because page may be updated in Javascript] -->
 					<span class="ajax_cart_product_txt {if $cart_qties > 1} unvisible{/if}">
-						{l s='1 room in your cart.' mod='blockcart'}
+						{l s='1 habitación agregada.' mod='blockcart'}
 					</span>
 				</h2>
 
 				<div class="layer_cart_row">
 					<strong class="dark">
-						{l s='Total Rooms Cost in cart' mod='blockcart'}
+						{l s='Total' mod='blockcart'}
 						{if $display_tax_label}
 							{if $priceDisplay == 1}
 								{l s='(tax excl.)' mod='blockcart'}
@@ -344,7 +340,7 @@
 						<span class="price cart_block_tax_cost ajax_cart_tax_cost">{$tax_cost}</span>
 					</div>
 				{/if}
-				<div class="layer_cart_row">
+				<!--div class="layer_cart_row">
 					<strong class="dark">
 						{l s='Total' mod='blockcart'}
 						{if $display_tax_label}
@@ -364,16 +360,11 @@
 							{/if}
 						{/if}
 					</span>
-				</div>
+				</div-->
 				<div class="button-container">
-					<span class="continue btn btn-default button exclusive-medium" title="{l s='Continue shopping' mod='blockcart'}">
-						<span>
-							<i class="icon-chevron-left left"></i>{l s='Continue shopping' mod='blockcart'}
-						</span>
-					</span>
 					<a class="btn btn-default button button-medium"	href="{$link->getPageLink("$order_process", true)|escape:"html":"UTF-8"}" title="{l s='Proceed to checkout' mod='blockcart'}" rel="nofollow">
 						<span>
-							{l s='Proceed to checkout' mod='blockcart'}<i class="icon-chevron-right right"></i>
+							{l s='Continuar' mod='blockcart'}<i class="icon-chevron-right right"></i>
 						</span>
 					</a>
 				</div>
@@ -406,14 +397,14 @@
 {addJsDef room_warning_num = $warning_num}
 {addJsDef currency_format = $currency->format}
 {addJsDef currency_blank = $currency->blank}
-{addJsDefL name=adults_txt}{l s='Adults' mod='blockcart' js=1}{/addJsDefL}
-{addJsDefL name=children_txt}{l s='Children' mod='blockcart' js=1}{/addJsDefL}
-{addJsDefL name=price_txt}{l s='Price' mod='blockcart' js=1}{/addJsDefL}
-{addJsDefL name=total_qty_txt}{l s='Total Qty.' mod='blockcart' js=1}{/addJsDefL}
-{addJsDefL name=qty_txt}{l s='Qty' mod='blockcart' js=1}{/addJsDefL}
-{addJsDefL name=duration_txt}{l s='Duration' mod='blockcart' js=1}{/addJsDefL}
-{addJsDefL name=capacity_txt}{l s='Capacity' mod='blockcart' js=1}{/addJsDefL}
-{addJsDefL name=remove_rm_title}{l s='remove this room from my cart' mod='blockcart' js=1}{/addJsDefL}
+{addJsDefL name=adults_txt}{l s='Adultos' mod='blockcart' js=1}{/addJsDefL}
+{addJsDefL name=children_txt}{l s='Niños' mod='blockcart' js=1}{/addJsDefL}
+{addJsDefL name=price_txt}{l s='Precios' mod='blockcart' js=1}{/addJsDefL}
+{addJsDefL name=total_qty_txt}{l s='Total' mod='blockcart' js=1}{/addJsDefL}
+{addJsDefL name=qty_txt}{l s='Cantidad' mod='blockcart' js=1}{/addJsDefL}
+{addJsDefL name=duration_txt}{l s='Duración' mod='blockcart' js=1}{/addJsDefL}
+{addJsDefL name=capacity_txt}{l s='Capacidad' mod='blockcart' js=1}{/addJsDefL}
+{addJsDefL name=remove_rm_title}{l s='eliminar' mod='blockcart' js=1}{/addJsDefL}
 
 {addJsDef rm_avail_process_lnk = $link->getModuleLink('blockcart', 'checkroomavailabilityajaxprocess')}
 {addJsDef pagename = $current_page}

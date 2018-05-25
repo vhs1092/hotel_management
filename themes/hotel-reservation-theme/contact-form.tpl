@@ -24,12 +24,12 @@
 	{include file="$tpl_dir./errors.tpl"}
 	<div class="row margin-top-50">
 		<div class="col-sm-6">
-			<p class="contact-header">{l s='Get in touch with us'}</p>
+			<p class="contact-header">{l s='¡Contactanos!'}</p>
 			<p class="contact-desc">{l s='Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry`s standard dummy text.'}</p>
 			<div class="col-sm-12 contact-subdiv">
 				<p>
 					<i class="icon-map-marker cont_icon_map"></i>
-					<span> {l s='Contrary to popular belief, Lorem Ipsum is not simply random text.'}</span>
+					<span> {l s='Calle La Union, 03000 Flores '}</span>
 				</p>
 				<p>
 					<i class="icon-mobile-phone cont_icon_phone"></i>
@@ -98,13 +98,13 @@
 					<!-- End -->
 					
 				{/if}
-				{*<input type="text" placeholder="Name" class="form-control contact_input">*}
+				{*<input type="text" placeholder="Nombre" class="form-control contact_input">*}
 				{if isset($customerThread.email)}
 					<input class="form-control contact_input" placeholder="Email" type="email" id="email" name="from" value="{$customerThread.email|escape:'html':'UTF-8'}" readonly="readonly" />
 				{else}
 					<input class="form-control contact_input validate" placeholder="Email" type="email" id="email" name="from" data-validate="isEmail" value="{$email|escape:'html':'UTF-8'}" />
 				{/if}
-				<textarea placeholder="Message/Query..." class="form-control contact_textarea" id="message" name="message">{if isset($message)}{$message|escape:'html':'UTF-8'|stripslashes}{/if}</textarea>
+				<textarea placeholder="Mensaje..." class="form-control contact_textarea" id="message" name="message">{if isset($message)}{$message|escape:'html':'UTF-8'|stripslashes}{/if}</textarea>
 				{if $fileupload == 1}
 					<p class="form-group">
 						{*<label for="fileUpload">{l s='Attach File'}</label>*}
@@ -113,14 +113,14 @@
 					</p>
 				{/if}
 				<div class="form-group">
-					<button class="btn button button-medium contact_btn" type="submit" name="submitMessage" id="submitMessage" ><span>{l s='Send'}</span></button>
+					<button class="btn button button-medium contact_btn" type="submit" name="submitMessage" id="submitMessage" ><span>{l s='Enviar'}</span></button>
 				</div>
 			</form>
 		</div>
 		{if isset($hotelLocationArray)}
-			<div class="col-xs-12 col-sm-12 margin-top-50" id="googleMapWrapper">
+			<!--div class="col-xs-12 col-sm-12 margin-top-50" id="googleMapWrapper">
 				<div id="map"></div>
-			</div>
+			</div-->
 		{/if}
 		<div style="clear:both;"></div>
 	</div>

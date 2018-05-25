@@ -36,6 +36,7 @@ class bankwire extends PaymentModule
     public $details;
     public $owner;
     public $address;
+    public $time;
     public $extra_mail_vars;
     public function __construct()
     {
@@ -49,7 +50,7 @@ class bankwire extends PaymentModule
         $this->currencies = true;
         $this->currencies_mode = 'checkbox';
 
-        $config = Configuration::getMultiple(array('BANK_WIRE_DETAILS', 'BANK_WIRE_OWNER', 'BANK_WIRE_ADDRESS'));
+        $config = Configuration::getMultiple(array('BANK_WIRE_DETAILS', 'BANK_WIRE_OWNER', 'BANK_WIRE_ADDRESS', 'BANK_WIRE_TIME'));
         if (!empty($config['BANK_WIRE_OWNER'])) {
             $this->owner = $config['BANK_WIRE_OWNER'];
         }
@@ -58,6 +59,9 @@ class bankwire extends PaymentModule
         }
         if (!empty($config['BANK_WIRE_ADDRESS'])) {
             $this->address = $config['BANK_WIRE_ADDRESS'];
+        }  
+        if (!empty($config['BANK_WIRE_TIME'])) {
+            $this->time = $config['BANK_WIRE_TIME'];
         }
 
         $this->bootstrap = true;
@@ -76,7 +80,8 @@ class bankwire extends PaymentModule
         $this->extra_mail_vars = array(
                                         '{bankwire_owner}' => Configuration::get('BANK_WIRE_OWNER'),
                                         '{bankwire_details}' => nl2br(Configuration::get('BANK_WIRE_DETAILS')),
-                                        '{bankwire_address}' => nl2br(Configuration::get('BANK_WIRE_ADDRESS'))
+                                        '{bankwire_address}' => nl2br(Configuration::get('BANK_WIRE_ADDRESS')),
+                                        '{bankwire_time}' => nl2br(Configuration::get('BANK_WIRE_TIME'))
                                         );
     }
 
@@ -93,6 +98,7 @@ class bankwire extends PaymentModule
         if (!Configuration::deleteByName('BANK_WIRE_DETAILS')
                 || !Configuration::deleteByName('BANK_WIRE_OWNER')
                 || !Configuration::deleteByName('BANK_WIRE_ADDRESS')
+                || !Configuration::deleteByName('BANK_WIRE_TIME')
                 || !parent::uninstall()) {
             return false;
         }
@@ -116,6 +122,7 @@ class bankwire extends PaymentModule
             Configuration::updateValue('BANK_WIRE_DETAILS', Tools::getValue('BANK_WIRE_DETAILS'));
             Configuration::updateValue('BANK_WIRE_OWNER', Tools::getValue('BANK_WIRE_OWNER'));
             Configuration::updateValue('BANK_WIRE_ADDRESS', Tools::getValue('BANK_WIRE_ADDRESS'));
+            Configuration::updateValue('BANK_WIRE_TIME', Tools::getValue('BANK_WIRE_TIME'));
         }
         $this->_html .= $this->displayConfirmation($this->l('Settings updated'));
     }
@@ -201,6 +208,7 @@ class bankwire extends PaymentModule
                 'bankwireDetails' => Tools::nl2br($this->details),
                 'bankwireAddress' => Tools::nl2br($this->address),
                 'bankwireOwner' => $this->owner,
+                'bankwireTime' => $this->time,
                 'status' => 'ok',
                 'id_order' => $params['objOrder']->id
             ));
@@ -255,6 +263,11 @@ class bankwire extends PaymentModule
                         'label' => $this->l('Bank address'),
                         'name' => 'BANK_WIRE_ADDRESS',
                         'required' => true
+                    ),                    array(
+                        'type' => 'text',
+                        'label' => $this->l('Tiempo para realizar el pago'),
+                        'name' => 'BANK_WIRE_TIME',
+                        'required' => true
                     ),
                 ),
                 'submit' => array(
@@ -290,6 +303,7 @@ class bankwire extends PaymentModule
             'BANK_WIRE_DETAILS' => Tools::getValue('BANK_WIRE_DETAILS', Configuration::get('BANK_WIRE_DETAILS')),
             'BANK_WIRE_OWNER' => Tools::getValue('BANK_WIRE_OWNER', Configuration::get('BANK_WIRE_OWNER')),
             'BANK_WIRE_ADDRESS' => Tools::getValue('BANK_WIRE_ADDRESS', Configuration::get('BANK_WIRE_ADDRESS')),
+            'BANK_WIRE_TIME' => Tools::getValue('BANK_WIRE_TIME', Configuration::get('BANK_WIRE_TIME')),
         );
     }
 }
